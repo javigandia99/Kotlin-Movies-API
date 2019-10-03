@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name"> Aplicacione  in Spagetti</string>
+    <string name="hello_world">Holi Spagetti!</string>
+    <string name="this_is_my_first_app">Este es mi primerinii App!</string>
+    <string name="first_button">Primerinni Button</string>
+    <string name="button_pressed">Button Spagetti presionati!</string>
+</resources>

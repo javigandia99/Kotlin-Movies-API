@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:background="#64b2cd"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/hellotext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/hello_world"
+        android:textColor="#6d0c74"
+        />
+
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/this_is_my_first_app"
+        android:textColor="#7f78d2"
+        />
+
+    <Button
+        android:id="@+id/mybutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:text="@string/first_button"
+        android:textColor="#fe59d7"
+        android:clickable="true"
+
+        android:background="#394a6d"
+        android:drawableBottom="@color/colorPrimaryDark"
+
+        />
+
+</LinearLayout>
