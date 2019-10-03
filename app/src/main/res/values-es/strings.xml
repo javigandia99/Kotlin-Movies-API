@@ -3,5 +3,5 @@
     <string name="hello_world">Hola Mundo!</string>
     <string name="this_is_my_first_app">Esta es mi primera app!</string>
     <string name="first_button">Primer Boton</string>
-    <string name="button_pressed">Boton ha sido presionado!</string>
+    <string name="button_pressed">Boton ha sido presionado! </string>
 </resources>
