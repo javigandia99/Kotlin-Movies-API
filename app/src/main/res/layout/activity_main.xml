@@ -11,13 +11,13 @@
     tools:context=".MainActivity">
     
     <TextView
-        android:id="@+id/count_text"
+        android:id="@+id/count_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="200dp"
         android:gravity="center"
-        android:text="@string/counttext"
+        android:text="@string/count_text"
         android:textColor="#f34573"
         />
 
