@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <resources>
 
     <!-- Base application theme. -->
@@ -6,6 +7,21 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="styleprofile">
+        <item name="android:textColor">@color/tittle</item>
+        <item name="android:textSize">35sp</item>
+    </style>
+
+    <style name="profile_info_tittle">
+        <item name="android:textColor">@color/colorCabecera</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="profile_info_value">
+        <item name="android:textColor">@color/colorValue</item>
+        <item name="android:textSize">15sp</item>
     </style>
 
 </resources>
