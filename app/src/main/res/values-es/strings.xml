@@ -8,4 +8,5 @@
     <string name="image_profile">Imagen de perfil</string>
     <string name="city">Ciudad:</string>
     <string name="age">Edad:</string>
+    <string name="description">Description:</string>
 </resources>
