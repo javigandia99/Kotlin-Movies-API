@@ -13,7 +13,7 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var cityText: TextView
     private lateinit var ageText: TextView
     private lateinit var descriptionText: TextView
-    private lateinit var buttonBack: Button
+    lateinit var buttonBack: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
