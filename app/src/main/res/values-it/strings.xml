@@ -3,4 +3,10 @@
     <string name="count_text">El botonni no se preciono</string>
     <string name="first_button">Primerinni Button</string>
     <string name="button_pressed">Button Spagetti presionati!</string>
+    <string name="toprofile_buttom">Perfilinni</string>
+    <string name="back_buttom">Go Backinni</string>
+    <string name="image_profile">Imaginni del profili</string>
+    <string name="city">Cuidadinni:</string>
+    <string name="age">Citiinni:</string>
+    <string name="description">Description:</string>
 </resources>

@@ -2,5 +2,11 @@
     <string name="app_name">Primera Applicacion</string>
     <string name="count_text">El boton no ha sido presionado todavia</string>
     <string name="first_button">Primer Boton</string>
-    <string name="button_pressed">Boton presionado ! </string>
+    <string name="button_pressed">Boton presionado! </string>
+    <string name="toprofile_buttom">Perfil</string>
+    <string name="back_buttom">Ir Atras</string>
+    <string name="image_profile">Imagen de perfil</string>
+    <string name="city">Ciudad:</string>
+    <string name="age">Edad:</string>
+    <string name="description">Description:</string>
 </resources>
