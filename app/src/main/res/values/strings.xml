@@ -12,4 +12,5 @@
     <string name="movieImageView">Movie Image</string>
     <string name="year">Year:</string>
     <string name="genre">Genre:</string>
+    <string name="tomoviedetail_buttom">Movie Detail</string>
 </resources>

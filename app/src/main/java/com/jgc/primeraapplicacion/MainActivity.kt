@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var countText: TextView
     private lateinit var myButton: Button
     private lateinit var profileButton: Button
+    private lateinit var movieDetailButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         countText.text = getString(R.string.count_text)
         myButton = findViewById(R.id.first_buttom)
         profileButton = findViewById(R.id.profile_buttom)
+        movieDetailButton = findViewById(R.id.moviedetail_buttom)
 
         var count = 1
 
@@ -45,6 +47,11 @@ class MainActivity : AppCompatActivity() {
             )
             startActivity(profileintent)
         }
+
+        movieDetailButton.setOnClickListener {
+            val movieintent = Intent(this, MovieDetailActivity::class.java)
+            startActivity(movieintent)
+        }
     }
 
     fun incrementcount(count: Int) {
@@ -54,4 +61,5 @@ class MainActivity : AppCompatActivity() {
         countText.text = count.toString()
 
     }
+
 }
