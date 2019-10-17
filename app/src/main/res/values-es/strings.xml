@@ -8,5 +8,8 @@
     <string name="image_profile">Imagen de perfil</string>
     <string name="city">Ciudad:</string>
     <string name="age">Edad:</string>
-    <string name="description">Description:</string>
+    <string name="description">Descripcion:</string>
+    <string name="movieImageView">Movie Image</string>
+    <string name="year">Año:</string>
+    <string name="genre">Genero:</string>
 </resources>

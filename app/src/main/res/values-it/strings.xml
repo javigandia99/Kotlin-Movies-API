@@ -9,4 +9,7 @@
     <string name="city">Cuidadinni:</string>
     <string name="age">Citiinni:</string>
     <string name="description">Description:</string>
+    <string name="movieImageView">Movie Imaginii</string>
+    <string name="year">Annio:</string>
+    <string name="genre">Generinii:</string>
 </resources>
