@@ -30,7 +30,6 @@
         android:focusable="true"
         android:gravity="center"
         android:text="@string/first_button"
-
         android:textColor="#fe59d7" />
 
     <Button
