@@ -10,8 +10,8 @@
     <string name="age">Citiinni:</string>
     <string name="description">Description:</string>
     <string name="movieImageView">Movie Imaginii</string>
-    <string name="year">Annio:</string>
+    <string name="releasedate">Fechachitii:</string>
     <string name="genre">Generinii:</string>
-    <string name="tomovielist_buttom">Go to Movie List</string>
-    <string name="tomoviedetail_buttom">Go to Movie Detail</string>
+    <string name="tomovielist_buttom">Ir a la peliculinni</string>
+    <string name="tomoviedetail_buttom">Ir a la peliculini detili</string>
 </resources>

@@ -10,7 +10,7 @@
     <string name="age">Edad:</string>
     <string name="description">Descripcion:</string>
     <string name="movieImageView">Movie Image</string>
-    <string name="year">Año:</string>
+    <string name="releasedate">Fecha:</string>
     <string name="genre">Genero:</string>
     <string name="tomovielist_buttom">Ir a Lista de Peliculas</string>
     <string name="tomoviedetail_buttom">Ir a Movie Detail</string>

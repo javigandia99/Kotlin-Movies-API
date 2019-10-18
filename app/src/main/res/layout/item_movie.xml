@@ -13,20 +13,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/item_image"
         app:layout_constraintTop_toTopOf="@+id/item_image"
         tools:text="Movie Tittle" />
 
     <ImageView
         android:id="@+id/item_image"
-        android:layout_width="128dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="24dp"
-        android:contentDescription="Image View"
+        android:layout_width="117dp"
+        android:layout_height="139dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/movieImageView"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.545"
         tools:contentDescription="Image View"
         tools:srcCompat="@tools:sample/avatars[11]" />
 
@@ -34,7 +36,7 @@
         android:id="@+id/item_year"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
+        android:layout_marginStart="104dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/releaseDate"
         app:layout_constraintStart_toStartOf="@+id/releaseDate"
         tools:text="Movie Year" />
@@ -49,19 +51,21 @@
 
     <TextView
         android:id="@+id/releaseDate"
+        style="@style/profile_info_tittle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Release Date:"
+        android:layout_marginTop="32dp"
+        android:text="@string/releasedate"
         app:layout_constraintStart_toStartOf="@+id/item_tittle"
         app:layout_constraintTop_toBottomOf="@+id/item_tittle" />
 
     <TextView
         android:id="@+id/genre"
+        style="@style/profile_info_tittle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Genre:"
+        android:layout_marginTop="12dp"
+        android:text="@string/genre"
         app:layout_constraintStart_toStartOf="@+id/releaseDate"
         app:layout_constraintTop_toBottomOf="@+id/releaseDate" />
 
@@ -69,7 +73,12 @@
         android:id="@+id/item_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="339dp"
-        tools:layout_editor_absoluteY="2dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="#FFEB3B"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="score " />
 </androidx.constraintlayout.widget.ConstraintLayout>

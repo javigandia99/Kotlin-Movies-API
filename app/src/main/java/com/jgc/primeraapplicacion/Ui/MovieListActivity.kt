@@ -25,9 +25,9 @@ class MovieListActivity : AppCompatActivity() {
             )),
             (Movie(
                 2,
-                "20",
+                "https://m.media-amazon.com/images/M/MV5BMDdmZGU3NDQtY2E5My00ZTliLWIzOTUtMTY4ZGI1YjdiNjk3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SY1000_CR0,0,671,1000_AL_.jpg",
                 "Titanic",
-                "1997",
+                "09/01/1997",
                 "Drama, Romance",
                 "84 years later, a 100 year-old woman named Rose DeWitt Bukater tells the story to her granddaughter Lizzy Calvert, " +
                         "Brock Lovett, Lewis Bodine, Bobby Buell and Anatoly Mikailavich on the Keldysh about her life set in April 10th 1912," +
@@ -71,7 +71,7 @@ class MovieListActivity : AppCompatActivity() {
             )),
             (Movie(
                 6,
-                "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,665,1000_AL_.jpg",
+                "https://m.media-amazon.com/images/M/MV5BZjJiYTExOTAtNWU0Yi00NzJjLTkwOTgtOTU2NWM1ZjJmYWVhXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SY1000_SX675_AL_.jpg",
                 "Maléfica: Maestra del mal",
                 "18/10/2019",
                 " Adventure, Family, Fantasy",

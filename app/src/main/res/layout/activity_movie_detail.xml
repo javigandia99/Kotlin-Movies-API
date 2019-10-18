@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="@string/year"
+        android:text="@string/releasedate"
         app:layout_constraintStart_toStartOf="@+id/movie_tittle"
         app:layout_constraintTop_toBottomOf="@+id/movie_tittle" />
 
@@ -99,7 +99,8 @@
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description_tittle"
-        app:srcCompat="@android:drawable/ic_input_add" />
+        app:srcCompat="@android:drawable/ic_input_add"
+        tools:contentDescription="add button" />
 
     <ImageView
         android:id="@+id/fav_button"
@@ -111,7 +112,8 @@
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@+id/add_button"
         app:layout_constraintTop_toTopOf="@+id/add_button"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        app:srcCompat="@android:drawable/btn_star_big_on"
+        tools:contentDescription="fav button" />
 
     <ImageView
         android:id="@+id/shareButton"
@@ -123,7 +125,8 @@
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@+id/fav_button"
         app:layout_constraintTop_toTopOf="@+id/fav_button"
-        app:srcCompat="?attr/actionModeShareDrawable" />
+        app:srcCompat="?attr/actionModeShareDrawable"
+        tools:contentDescription="share button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
