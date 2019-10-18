@@ -44,7 +44,6 @@
         android:focusable="true"
         android:gravity="center"
         android:text="@string/toprofile_buttom"
-
         android:textColor="#fe59d7" />
 
     <Button
@@ -59,7 +58,6 @@
         android:focusable="true"
         android:gravity="center"
         android:text="@string/tomovielist_buttom"
-
         android:textColor="#fe59d7" />
 
     <Button
@@ -74,7 +72,6 @@
         android:focusable="true"
         android:gravity="center"
         android:text="@string/tomoviedetail_buttom"
-
         android:textColor="#fe59d7" />
 
 </LinearLayout>

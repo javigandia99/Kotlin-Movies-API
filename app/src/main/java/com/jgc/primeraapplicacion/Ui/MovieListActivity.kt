@@ -13,7 +13,7 @@ class MovieListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_list)
 
-        val movieList = listOf<Movie>(
+        val movieList = listOf(
             (Movie(
                 1,
                 "https://sm.ign.com/ign_es/feature/r/ready-play/ready-player-one-138-easter-eggs-and-pop-culture-references_xtve.jpg",
@@ -72,7 +72,7 @@ class MovieListActivity : AppCompatActivity() {
             (Movie(
                 6,
                 "https://m.media-amazon.com/images/M/MV5BZjJiYTExOTAtNWU0Yi00NzJjLTkwOTgtOTU2NWM1ZjJmYWVhXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SY1000_SX675_AL_.jpg",
-                "Maléfica: Maestra del mal",
+                "Maleficient",
                 "18/10/2019",
                 " Adventure, Family, Fantasy",
                 "Maleficent and her goddaughter Aurora begin to question the complex family ties that bind them as they are pulled in different directions by impending nuptials," +
