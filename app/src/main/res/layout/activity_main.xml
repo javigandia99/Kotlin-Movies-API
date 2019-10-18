@@ -6,7 +6,7 @@
     android:layout_gravity="center"
     android:background="#5d5d5d"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".Ui.MainActivity">
 
     <TextView
         android:id="@+id/count_textview"

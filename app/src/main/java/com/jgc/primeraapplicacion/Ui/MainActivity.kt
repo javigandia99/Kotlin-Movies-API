@@ -1,4 +1,4 @@
-package com.jgc.primeraapplicacion
+package com.jgc.primeraapplicacion.Ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import com.jgc.primeraapplicacion.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var myButton: Button
     private lateinit var profileButton: Button
     private lateinit var movieDetailButton: Button
+    var tag = "Main"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +36,9 @@ class MainActivity : AppCompatActivity() {
         profileButton.setOnClickListener {
             val profileintent = Intent(this, ProfileActivity::class.java)
             profileintent.putExtra("intent_name", "Valentino Rossi")
-            profileintent.putExtra("intent_image", R.drawable.valentino_rossi)
+            profileintent.putExtra("intent_image",
+                R.drawable.valentino_rossi
+            )
             profileintent.putExtra("intent_city", "Tuvullia")
             profileintent.putExtra("intent_age", "40")
             profileintent.putExtra(
@@ -61,5 +65,4 @@ class MainActivity : AppCompatActivity() {
         countText.text = count.toString()
 
     }
-
 }
