@@ -34,12 +34,6 @@ class ProfileActivity : AppCompatActivity() {
         cityText.text = city
         ageText.text = age
         descriptionText.text = description
-
-
-        /* buttonBack.setOnClickListener() {
-             val backintent = Intent(this, MainActivity::class.java)
-             startActivity(backintent)
-
-         }*/
+        
     }
 }
