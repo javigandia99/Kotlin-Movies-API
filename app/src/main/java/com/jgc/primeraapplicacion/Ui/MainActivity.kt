@@ -13,8 +13,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var countText: TextView
     private lateinit var myButton: Button
     private lateinit var profileButton: Button
+    private lateinit var movieListButton: Button
     private lateinit var movieDetailButton: Button
-    var tag = "Main"
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         countText.text = getString(R.string.count_text)
         myButton = findViewById(R.id.first_buttom)
         profileButton = findViewById(R.id.profile_buttom)
+        movieListButton = findViewById(R.id.movielist_buttom)
         movieDetailButton = findViewById(R.id.moviedetail_buttom)
 
         var count = 1
@@ -36,7 +38,8 @@ class MainActivity : AppCompatActivity() {
         profileButton.setOnClickListener {
             val profileintent = Intent(this, ProfileActivity::class.java)
             profileintent.putExtra("intent_name", "Valentino Rossi")
-            profileintent.putExtra("intent_image",
+            profileintent.putExtra(
+                "intent_image",
                 R.drawable.valentino_rossi
             )
             profileintent.putExtra("intent_city", "Tuvullia")
@@ -51,10 +54,14 @@ class MainActivity : AppCompatActivity() {
             )
             startActivity(profileintent)
         }
+        movieListButton.setOnClickListener {
+            val movielistintent = Intent(this, MovieListActivity::class.java)
+            startActivity(movielistintent)
+        }
 
         movieDetailButton.setOnClickListener {
-            val movieintent = Intent(this, MovieDetailActivity::class.java)
-            startActivity(movieintent)
+            val moviedetailintent = Intent(this, MovieDetailActivity::class.java)
+            startActivity(moviedetailintent)
         }
     }
 

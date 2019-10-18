@@ -48,6 +48,21 @@
         android:textColor="#fe59d7" />
 
     <Button
+        android:id="@+id/movielist_buttom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="#394a6d"
+        android:clickable="true"
+        android:drawableBottom="@color/colorPrimaryDark"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="@string/tomovielist_buttom"
+
+        android:textColor="#fe59d7" />
+
+    <Button
         android:id="@+id/moviedetail_buttom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

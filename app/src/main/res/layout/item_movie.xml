@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_margin="5dp"
+    android:background="@color/tittle">
+
+    <TextView
+        android:id="@+id/item_tittle"
+        style="@style/profile_info_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/item_image"
+        app:layout_constraintTop_toTopOf="@+id/item_image"
+        tools:text="Movie Tittle" />
+
+    <ImageView
+        android:id="@+id/item_image"
+        android:layout_width="128dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="24dp"
+        android:contentDescription="Image View"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:contentDescription="Image View"
+        tools:srcCompat="@tools:sample/avatars[11]" />
+
+    <TextView
+        android:id="@+id/item_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/releaseDate"
+        app:layout_constraintStart_toStartOf="@+id/releaseDate"
+        tools:text="Movie Year" />
+
+    <TextView
+        android:id="@+id/item_genre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBaseline_toBaselineOf="@+id/genre"
+        app:layout_constraintStart_toStartOf="@+id/item_year"
+        tools:text="Movie Genre" />
+
+    <TextView
+        android:id="@+id/releaseDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Release Date:"
+        app:layout_constraintStart_toStartOf="@+id/item_tittle"
+        app:layout_constraintTop_toBottomOf="@+id/item_tittle" />
+
+    <TextView
+        android:id="@+id/genre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Genre:"
+        app:layout_constraintStart_toStartOf="@+id/releaseDate"
+        app:layout_constraintTop_toBottomOf="@+id/releaseDate" />
+
+    <TextView
+        android:id="@+id/item_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="339dp"
+        tools:layout_editor_absoluteY="2dp"
+        tools:text="score " />
+</androidx.constraintlayout.widget.ConstraintLayout>

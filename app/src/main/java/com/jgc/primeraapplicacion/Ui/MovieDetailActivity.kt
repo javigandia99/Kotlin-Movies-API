@@ -9,7 +9,6 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_movie_detail.*
 
 class MovieDetailActivity : AppCompatActivity() {
-    var tag = "MovieDetailAcitvity"
     val movie = Movie(
         idMovie = 1,
         imageMovie = "https://sm.ign.com/ign_es/feature/r/ready-play/ready-player-one-138-easter-eggs-and-pop-culture-references_xtve.jpg",
@@ -21,12 +20,12 @@ class MovieDetailActivity : AppCompatActivity() {
                 "limits are your own imagination. OASIS creator James Halliday left his immense fortune" +
                 " and control of the Oasis to the winner of a contest designed to find a worthy heir. " +
                 "When unlikely hero Wade Watts conquers the first challenge of the reality-bending treasure hunt," +
-                "he and his friends-known as the High Five-are hurled into a fantastical universe of discovery and danger to save the OASIS and their world."
+                "he and his friends-known as the High Five-are hurled into a fantastical universe of discovery and danger to save the OASIS and their world.",
+        score = 10F
 
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Log.e(tag, "onCreate()")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_detail)
 
@@ -39,26 +38,5 @@ class MovieDetailActivity : AppCompatActivity() {
         }
 
     }
-
-    override fun onStart() {
-        super.onStart()
-        Log.e(tag, "onStart()")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.e(tag, "onResume()")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.e(tag, "onStop()")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.e(tag, "onDestroy()")
-    }
-
 
 }

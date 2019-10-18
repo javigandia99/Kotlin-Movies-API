@@ -6,5 +6,6 @@ data class Movie(
     val tittle: String,
     val release_date: String,
     val genreMovie: String,
-    val overview: String
+    val overview: String,
+    val score: Float
 )

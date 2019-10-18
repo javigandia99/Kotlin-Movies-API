@@ -3,7 +3,7 @@
     <string name="count_text">The button has not been pressed yet!</string>
     <string name="first_button">First Button</string>
     <string name="button_pressed">Button has been pressed!</string>
-    <string name="toprofile_buttom">Profile</string>
+    <string name="toprofile_buttom">Go to Profile</string>
     <string name="back_buttom">Go Back</string>
     <string name="image_profile">image of profile</string>
     <string name="city">City:</string>
@@ -12,5 +12,6 @@
     <string name="movieImageView">Movie Image</string>
     <string name="year">Year:</string>
     <string name="genre">Genre:</string>
-    <string name="tomoviedetail_buttom">Movie Detail</string>
+    <string name="tomovielist_buttom">Go to Movie List</string>
+    <string name="tomoviedetail_buttom">Go to Movie Detail</string>
 </resources>
