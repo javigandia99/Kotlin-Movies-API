@@ -81,10 +81,11 @@ class MovieListActivity : AppCompatActivity() {
                 7.1F
             ))
         )
-        recycler_view.layoutManager = LinearLayoutManager(this)
-        recycler_view.adapter = MoviesAdapter(movieList)
-       // recycler_view.addItemDecoration(this,DividerItemDecoration.VERTICAL)
-        recycler_view.setHasFixedSize(true)
-
+        recycler_view.apply {
+            layoutManager = LinearLayoutManager(this@MovieListActivity)
+            adapter = MoviesAdapter(movieList)
+            addItemDecoration(DividerItemDecoration(this@MovieListActivity, DividerItemDecoration.VERTICAL))
+            setHasFixedSize(true)
+        }
     }
 }
