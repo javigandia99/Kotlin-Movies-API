@@ -6,15 +6,14 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.jgc.primeraapplicacion.R
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var countText: TextView
-    private lateinit var myButton: Button
-    private lateinit var profileButton: Button
-    private lateinit var movieListButton: Button
-    private lateinit var movieDetailButton: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,27 +21,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setTitle(R.string.title_main)
 
-        countText = findViewById(R.id.count_textview)
-        countText.text = getString(R.string.count_text)
-        myButton = findViewById(R.id.first_buttom)
-        profileButton = findViewById(R.id.profile_buttom)
-        movieListButton = findViewById(R.id.movielist_buttom)
-        movieDetailButton = findViewById(R.id.moviedetail_buttom)
 
-        var count = 1
+        val navController = findNavController(R.id.nav_host_fragment)
+        val appBarConfiguration = AppBarConfiguration(navController.graph)
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        bottom_navigation_bar.setupWithNavController(navController)
 
-        myButton.setOnClickListener {
-            incrementcount(count++)
-
-        }
-
-        profileButton.setOnClickListener {
+        bottom_navigation_bar.setOnClickListener {
             val profileintent = Intent(this, ProfileActivity::class.java)
             profileintent.putExtra("intent_name", "Valentino Rossi")
-            profileintent.putExtra(
-                "intent_image",
-                R.drawable.valentino_rossi
-            )
+            profileintent.putExtra("intent_image", R.drawable.valentino_rossi)
             profileintent.putExtra("intent_city", "Tuvullia")
             profileintent.putExtra("intent_age", "40")
             profileintent.putExtra(
@@ -55,22 +43,5 @@ class MainActivity : AppCompatActivity() {
             )
             startActivity(profileintent)
         }
-        movieListButton.setOnClickListener {
-            val movielistintent = Intent(this, MovieListActivity::class.java)
-            startActivity(movielistintent)
-        }
-
-        movieDetailButton.setOnClickListener {
-            val moviedetailintent = Intent(this, MovieDetailActivity::class.java)
-            startActivity(moviedetailintent)
-        }
-    }
-
-    fun incrementcount(count: Int) {
-        var message = getString(R.string.button_pressed)
-        Toast.makeText(MainActivity@ this, message, Toast.LENGTH_LONG).show()
-
-        countText.text = count.toString()
-
     }
 }
