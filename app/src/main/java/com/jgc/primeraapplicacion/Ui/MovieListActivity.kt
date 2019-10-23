@@ -82,6 +82,7 @@ class MovieListActivity : AppCompatActivity() {
         )
         recycler_view.layoutManager = LinearLayoutManager(this)
         recycler_view.adapter = MoviesAdapter(movieList)
+        recycler_view.setHasFixedSize(true)
 
     }
 }
