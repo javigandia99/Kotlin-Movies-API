@@ -8,10 +8,14 @@
     <string name="image_profile">Imagen de perfil</string>
     <string name="city">Ciudad:</string>
     <string name="age">Edad:</string>
-    <string name="description">Descripcion:</string>
+    <string name="description">Descripción:</string>
     <string name="movieImageView">Movie Image</string>
     <string name="releasedate">Fecha:</string>
     <string name="genre">Genero:</string>
     <string name="tomovielist_buttom">Ir a Lista de Peliculas</string>
     <string name="tomoviedetail_buttom">Ir a Movie Detail</string>
+    <string name="title_movielist">Listado de Peliculas</string>
+    <string name="title_main">principal</string>
+    <string name="title_moviedetail">Detalles de Pelicula</string>
+    <string name="title_profile">Perfil</string>
 </resources>

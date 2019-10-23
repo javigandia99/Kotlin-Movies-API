@@ -17,21 +17,37 @@ class MoviesAdapter(val movieList: List<Movie>) : RecyclerView.Adapter<MovieList
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieListViewHolder {
 
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_movie, parent, false)
-        return MovieListViewHolder(view)
+        return MovieListViewHolder.from(parent)
     }
 
 
     override fun onBindViewHolder(holder: MovieListViewHolder, position: Int) {
         val movieItem = movieList[position]
-        holder.view.item_tittle.text = movieItem.tittle
-        Picasso.get().load(movieItem.imageMovie).into(holder.view.item_image)
-        holder.view.item_genre.text = movieItem.genreMovie
-        holder.view.item_year.text = movieItem.release_date
-        holder.view.item_score.text = movieItem.score.toString()
+        holder.bind(movieItem)
     }
 
 
 }
 
-class MovieListViewHolder(val view: View) : RecyclerView.ViewHolder(view)
+class MovieListViewHolder private constructor(val view: View) : RecyclerView.ViewHolder(view) {
+
+
+    fun bind(movieItem: Movie) {
+        view.item_tittle.text = movieItem.tittle
+        Picasso.get().load(movieItem.imageMovie).into(view.item_image)
+        view.item_genre.text = movieItem.genreMovie
+        view.item_year.text = movieItem.release_date
+        view.item_score.text = movieItem.score.toString()
+    }
+
+
+    //Fun static
+    companion object {
+        fun from(parent: ViewGroup): MovieListViewHolder {
+            val view =
+                LayoutInflater.from(parent.context).inflate(R.layout.item_movie, parent, false)
+            return MovieListViewHolder(view)
+        }
+
+    }
+}

@@ -28,6 +28,7 @@ class MovieDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_detail)
+        setTitle(R.string.title_moviedetail)
 
         with(movie) {
             movie_tittle.text = tittle

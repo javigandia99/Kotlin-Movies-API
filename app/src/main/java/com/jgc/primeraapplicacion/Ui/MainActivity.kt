@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setTitle(R.string.title_main)
 
         countText = findViewById(R.id.count_textview)
         countText.text = getString(R.string.count_text)

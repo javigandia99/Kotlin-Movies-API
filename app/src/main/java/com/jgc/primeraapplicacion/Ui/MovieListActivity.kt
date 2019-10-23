@@ -2,6 +2,7 @@ package com.jgc.primeraapplicacion.Ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jgc.primeraapplicacion.Model.Movie
 import com.jgc.primeraapplicacion.R
@@ -12,7 +13,7 @@ class MovieListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_list)
-
+        setTitle(R.string.title_movielist)
         val movieList = listOf(
             (Movie(
                 1,
@@ -82,6 +83,7 @@ class MovieListActivity : AppCompatActivity() {
         )
         recycler_view.layoutManager = LinearLayoutManager(this)
         recycler_view.adapter = MoviesAdapter(movieList)
+       // recycler_view.addItemDecoration(this,DividerItemDecoration.VERTICAL)
         recycler_view.setHasFixedSize(true)
 
     }
