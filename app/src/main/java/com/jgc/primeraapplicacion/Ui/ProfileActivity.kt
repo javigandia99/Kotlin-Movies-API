@@ -1,9 +1,10 @@
-package com.jgc.primeraapplicacion
+package com.jgc.primeraapplicacion.Ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import com.jgc.primeraapplicacion.R
 
 class ProfileActivity : AppCompatActivity() {
     private lateinit var nameText: TextView
@@ -15,6 +16,7 @@ class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
+        setTitle(R.string.title_profile)
 
         nameText = findViewById(R.id.profile_nameView)
         imageView = findViewById(R.id.profile_imageView)
@@ -33,12 +35,6 @@ class ProfileActivity : AppCompatActivity() {
         cityText.text = city
         ageText.text = age
         descriptionText.text = description
-
-
-        /* buttonBack.setOnClickListener() {
-             val backintent = Intent(this, MainActivity::class.java)
-             startActivity(backintent)
-
-         }*/
+        
     }
 }

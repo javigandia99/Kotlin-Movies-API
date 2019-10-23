@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_margin="5dp"
+    android:background="@color/tittle">
+
+    <TextView
+        android:id="@+id/item_tittle"
+        style="@style/profile_info_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/item_image"
+        app:layout_constraintTop_toTopOf="@+id/item_image"
+        tools:text="Movie Tittle" />
+
+    <ImageView
+        android:id="@+id/item_image"
+        android:layout_width="117dp"
+        android:layout_height="139dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/movieImageView"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.545"
+        tools:contentDescription="Image View"
+        tools:srcCompat="@tools:sample/avatars[11]" />
+
+    <TextView
+        android:id="@+id/item_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBaseline_toBaselineOf="@+id/releaseDate"
+        app:layout_constraintStart_toStartOf="@+id/item_genre"
+        tools:text="Movie Year" />
+
+    <TextView
+        android:id="@+id/item_genre"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="54dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/genre"
+        app:layout_constraintStart_toEndOf="@+id/genre"
+        tools:text="Movie Genre" />
+
+    <TextView
+        android:id="@+id/releaseDate"
+        style="@style/profile_info_tittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/releasedate"
+        app:layout_constraintStart_toStartOf="@+id/genre"
+        app:layout_constraintTop_toBottomOf="@+id/genre" />
+
+    <TextView
+        android:id="@+id/genre"
+        style="@style/profile_info_tittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/genre"
+        app:layout_constraintStart_toStartOf="@+id/item_tittle"
+        app:layout_constraintTop_toBottomOf="@+id/item_tittle" />
+
+    <TextView
+        android:id="@+id/item_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:textColor="#FFEB3B"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="score " />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left"
+        app:constraint_referenced_ids="item_year,item_genre"
+        tools:layout_editor_absoluteX="401dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

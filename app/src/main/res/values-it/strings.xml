@@ -3,10 +3,19 @@
     <string name="count_text">El botonni no se preciono</string>
     <string name="first_button">Primerinni Button</string>
     <string name="button_pressed">Button Spagetti presionati!</string>
-    <string name="toprofile_buttom">Perfilinni</string>
+    <string name="toprofile_buttom">Go to Perfilinni</string>
     <string name="back_buttom">Go Backinni</string>
     <string name="image_profile">Imaginni del profili</string>
     <string name="city">Cuidadinni:</string>
     <string name="age">Citiinni:</string>
     <string name="description">Description:</string>
+    <string name="movieImageView">Movie Imaginii</string>
+    <string name="releasedate">Fechachitii:</string>
+    <string name="genre">Generinii:</string>
+    <string name="tomovielist_buttom">Ir a la peliculinni</string>
+    <string name="tomoviedetail_buttom">Ir a la peliculini detili</string>
+    <string name="title_movielist">Movie List</string>
+    <string name="title_main">Main</string>
+    <string name="title_moviedetail">Movie Detail</string>
+    <string name="title_profile">Profile</string>
 </resources>

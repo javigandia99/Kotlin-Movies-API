@@ -6,14 +6,14 @@
     android:layout_gravity="center"
     android:background="#5d5d5d"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".Ui.MainActivity">
 
     <TextView
         android:id="@+id/count_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:gravity="center"
         android:text="@string/count_text"
         android:textColor="#f34573" />
@@ -34,7 +34,7 @@
 
     <Button
         android:id="@+id/profile_buttom"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
@@ -44,7 +44,34 @@
         android:focusable="true"
         android:gravity="center"
         android:text="@string/toprofile_buttom"
+        android:textColor="#fe59d7" />
 
+    <Button
+        android:id="@+id/movielist_buttom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="#394a6d"
+        android:clickable="true"
+        android:drawableBottom="@color/colorPrimaryDark"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="@string/tomovielist_buttom"
+        android:textColor="#fe59d7" />
+
+    <Button
+        android:id="@+id/moviedetail_buttom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="#394a6d"
+        android:clickable="true"
+        android:drawableBottom="@color/colorPrimaryDark"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="@string/tomoviedetail_buttom"
         android:textColor="#fe59d7" />
 
 </LinearLayout>
