@@ -11,10 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Ui.MovieListActivity"></activity>
-        <activity android:name=".Ui.MovieDetailActivity" />
-        <activity android:name=".Ui.ProfileActivity" />
-        <activity android:name=".Ui.MainActivity">
+        <activity android:name=".ui.movielist.MovieListActivity"></activity>
+        <activity android:name=".ui.moviedetail.MovieDetailActivity" />
+        <activity android:name=".ui.profile.ProfileActivity" />
+        <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

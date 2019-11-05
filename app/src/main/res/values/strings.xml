@@ -11,7 +11,7 @@
     <string name="description">Description:</string>
     <string name="movieImageView">Movie Image</string>
     <string name="releasedate">Release Date:</string>
-    <string name="genre">Genre:</string>
+    <string name="overview">Overview:</string>
     <string name="tomovielist_buttom">Go to Movie List</string>
     <string name="tomoviedetail_buttom">Go to Movie Detail</string>
     <string name="title_movielist">Movie List</string>
@@ -20,5 +20,5 @@
     <string name="title_profile">Profile</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="entermovies">Enter Movies</string>
 </resources>

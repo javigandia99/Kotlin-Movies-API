@@ -11,11 +11,12 @@
     <string name="description">Description:</string>
     <string name="movieImageView">Movie Imaginii</string>
     <string name="releasedate">Fechachitii:</string>
-    <string name="genre">Generinii:</string>
+    <string name="overview">Generinii:</string>
     <string name="tomovielist_buttom">Ir a la peliculinni</string>
     <string name="tomoviedetail_buttom">Ir a la peliculini detili</string>
     <string name="title_movielist">Movie List</string>
     <string name="title_main">Main</string>
     <string name="title_moviedetail">Movie Detail</string>
     <string name="title_profile">Profile</string>
+    <string name="entermovies">Enter Movies</string>
 </resources>

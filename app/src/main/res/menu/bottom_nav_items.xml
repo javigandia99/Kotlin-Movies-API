@@ -3,14 +3,14 @@
 
     <item
         android:id="@+id/fragment_movieslist"
-        android:icon="@android:drawable/presence_video_busy"
+        android:icon="@android:drawable/btn_star"
         android:title="@string/title_movielist" />
     <item
         android:id="@+id/fragment_search"
-        android:icon="@android:drawable/presence_online"
+        android:icon="@android:drawable/ic_menu_search"
         android:title="@android:string/search_go" />
     <item
         android:id="@+id/fragment_profile"
-        android:icon="@android:drawable/presence_video_away"
+        android:icon="@android:drawable/ic_menu_view"
         android:title="@string/title_profile" />
 </menu>
