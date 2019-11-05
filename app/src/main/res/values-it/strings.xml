@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"> Aplicacione  in Spagetti</string>
+    <string name="app_name">JGC Movies</string>
     <string name="count_text">El botonni no se preciono</string>
     <string name="first_button">Primerinni Button</string>
     <string name="button_pressed">Button Spagetti presionati!</string>

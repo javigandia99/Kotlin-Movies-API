@@ -40,7 +40,7 @@ class MovieSearchAdapter(private val listener: (Movie) -> Unit) :
 
         fun bind(movie: Movie, listener: (Movie) -> Unit) {
             title.text = movie.title
-            Picasso.get().load(RetrofitFactory.BASE_URL + movie.poster_path).into(image)
+            Picasso.get().load(RetrofitFactory.BASE_IMAGE_URL + movie.poster_path).into(image)
             adult.text = movie.adult.toString()
             if (adult.text == "true") {
                 adult.text = "Only Adults"
@@ -48,7 +48,7 @@ class MovieSearchAdapter(private val listener: (Movie) -> Unit) :
             if (adult.text == "false") {
                 adult.text = "No"
             }
-            if (adult.text == "null"){
+            if (adult.text == "null") {
                 adult.text = "No classified"
             }
 

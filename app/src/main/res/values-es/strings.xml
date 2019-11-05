@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Primera Applicacion</string>
+    <string name="app_name">JGC Movies</string>
     <string name="count_text">El boton no ha sido presionado todavia</string>
     <string name="first_button">Primer Boton</string>
     <string name="button_pressed">Boton presionado! </string>

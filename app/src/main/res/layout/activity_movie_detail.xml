@@ -28,9 +28,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/detail_movie_imageview"
             app:layout_constraintTop_toBottomOf="@+id/detail_movie_imageview"
-            tools:text="Movie Title" />
+            tools:text="The Lord Of The Rings" />
 
         <TextView
             android:id="@+id/year_title"
@@ -77,11 +80,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:textSize="18sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/year_title"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintEnd_toEndOf="@+id/detail_movie_title"
             app:layout_constraintStart_toEndOf="@id/barrier"
             tools:text="1999-12-01" />
 
@@ -127,17 +128,21 @@
             android:id="@+id/detail_overview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="48dp"
             app:layout_constraintEnd_toEndOf="@+id/detail_genres_name"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/director_title"
             app:layout_constraintTop_toBottomOf="@+id/detail_genres_name"
-            tools:text='Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latind up one of the more obscure  the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.  The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.' />
+            tools:text='Contrary to popular belief, Lorem Ipsum is not simply random text.
+            It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
+             a Latind up one of the more obscure  the Renaissance. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form,
+             accompanied by English versions from the 1914 translation by H. Rackham.' />
 
         <ImageView
             android:id="@+id/add_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:contentDescription="@string/add_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/fav_button"

@@ -24,6 +24,7 @@ interface MovieApi {
 
 object RetrofitFactory {
     const val BASE_URL = "https://api.themoviedb.org/3/"
+    const val BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w500/"
 
     fun getMovieApi(): MovieApi {
         return Retrofit.Builder()
