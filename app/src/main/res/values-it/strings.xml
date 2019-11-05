@@ -19,4 +19,9 @@
     <string name="title_moviedetail">Movie Detail</string>
     <string name="title_profile">Profile</string>
     <string name="entermovies">Enter Movies</string>
+    <string name="popularity">Popularity</string>
+    <string name="adult">Adult:</string>
+    <string name="genres">Genres:</string>
+    <string name="director">Director:</string>
+    <string name="cast">Cast:</string>
 </resources>

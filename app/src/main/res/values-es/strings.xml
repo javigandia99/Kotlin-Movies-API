@@ -10,13 +10,18 @@
     <string name="age">Edad:</string>
     <string name="description">Descripción:</string>
     <string name="movieImageView">Movie Image</string>
-    <string name="releasedate">Fecha:</string>
-    <string name="overview">Genero:</string>
+    <string name="releasedate">Lanzamiento:</string>
+    <string name="overview">Descripción:</string>
     <string name="tomovielist_buttom">Ir a Lista de Peliculas</string>
     <string name="tomoviedetail_buttom">Ir a Movie Detail</string>
     <string name="title_movielist">Listado de Peliculas</string>
     <string name="title_main">principal</string>
     <string name="title_moviedetail">Detalles de Pelicula</string>
     <string name="title_profile">Perfil</string>
-    <string name="entermovies">Enter Movies</string>
+    <string name="entermovies">Introduce titulos de peliculas</string>
+    <string name="popularity">Popularidad:</string>
+    <string name="adult">Solo adultos:</string>
+    <string name="genres">Generos:</string>
+    <string name="director">Director:</string>
+    <string name="cast">Reparto:</string>
 </resources>

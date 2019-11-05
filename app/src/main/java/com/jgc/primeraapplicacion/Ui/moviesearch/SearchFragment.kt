@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -21,11 +22,12 @@ import kotlinx.android.synthetic.main.fragment_search.*
 /**
  * A simple [Fragment] subclass.
  */
-class SearchFragment : Fragment(), MovieSearchView {
+class SearchFragment : Fragment(), MovieSearchView, SearchView.OnQueryTextListener {
 
     lateinit var movieSearchAdapter: MovieSearchAdapter
     lateinit var movieRecyclerView: RecyclerView
-    lateinit var searchButton: Button
+    lateinit var searchView: SearchView
+    val presenter = MovieSearchPresenter(this)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,8 +35,10 @@ class SearchFragment : Fragment(), MovieSearchView {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_search, container, false)
         movieRecyclerView = view.findViewById(R.id.movieSearch_RecyclerView)
-        searchButton = view.findViewById(R.id.search_button)
-        val presenter = MovieSearchPresenter(this)
+        searchView = view.findViewById(R.id.search_view)
+        searchView.setOnQueryTextListener(this@SearchFragment);
+
+        //val presenter = MovieSearchPresenter(this)
 
         movieRecyclerView.layoutManager = LinearLayoutManager(this.context)
         movieRecyclerView.setHasFixedSize(true)
@@ -44,12 +48,16 @@ class SearchFragment : Fragment(), MovieSearchView {
         }
         movieRecyclerView.adapter = movieSearchAdapter
 
-        searchButton.setOnClickListener {
-            val searchmovie = search_edit_text.text.toString()
-            presenter.searchClicked(searchmovie)
-        }
-
         return view
+    }
+    override fun onQueryTextSubmit(query: String?): Boolean {
+        return false
+    }
+
+    override fun onQueryTextChange(newText: String?): Boolean {
+
+        presenter.searchClicked(newText!!)
+        return false
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

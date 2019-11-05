@@ -8,6 +8,17 @@
     android:background="@color/tittle">
 
     <TextView
+        android:id="@+id/item_adult"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/overview"
+        app:layout_constraintEnd_toEndOf="@+id/item_score"
+        app:layout_constraintStart_toEndOf="@+id/overview"
+        tools:text="Movie  adult" />
+
+    <TextView
         android:id="@+id/item_title"
         style="@style/profile_info_value"
         android:layout_width="wrap_content"
@@ -37,21 +48,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBaseline_toBaselineOf="@+id/releaseDate"
-        app:layout_constraintStart_toStartOf="@+id/item_overview"
+        app:layout_constraintStart_toStartOf="@+id/item_popularity"
         tools:text="Movie Year" />
 
     <TextView
-        android:id="@+id/item_overview"
+        android:id="@+id/item_popularity"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="54dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="42dp"
-        android:textSize="10sp"
-        app:layout_constraintBottom_toTopOf="@+id/item_year"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/overview"
-        tools:text="Movie overview" />
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/popularity"
+        app:layout_constraintEnd_toEndOf="@+id/item_adult"
+        app:layout_constraintStart_toStartOf="@+id/item_adult"
+        tools:text="Movie popularity" />
 
     <TextView
         android:id="@+id/releaseDate"
@@ -69,7 +77,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="@string/overview"
+        android:text="@string/adult"
+        app:layout_constraintStart_toStartOf="@+id/item_title"
+        app:layout_constraintTop_toBottomOf="@+id/item_title" />
+
+    <TextView
+        android:id="@+id/popularity"
+        style="@style/profile_info_tittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="@string/popularity"
         app:layout_constraintStart_toStartOf="@+id/item_title"
         app:layout_constraintTop_toBottomOf="@+id/item_title" />
 
@@ -77,7 +95,7 @@
         android:id="@+id/item_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:textColor="#FFEB3B"
         android:textSize="18sp"
@@ -91,7 +109,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="left"
-        app:constraint_referenced_ids="item_year,item_overview"
+        app:constraint_referenced_ids="item_year,item_popularity"
         tools:layout_editor_absoluteX="401dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
