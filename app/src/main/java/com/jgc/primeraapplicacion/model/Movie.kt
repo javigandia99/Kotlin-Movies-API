@@ -9,4 +9,5 @@ data class Movie(
     val popularity: Float,
     val vote_average: Float
 )
-data class MovieResults( val results :List<Movie>)
+
+data class MovieResults(val results: List<Movie>)

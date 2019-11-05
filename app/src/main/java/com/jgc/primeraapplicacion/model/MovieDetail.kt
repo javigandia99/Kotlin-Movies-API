@@ -14,6 +14,6 @@ data class MovieDetail(
 
 )
 
-data class ListGenres( val name : String)
+data class ListGenres(val name: String)
 
 data class MovieDetailCast(val name: String, val job: String)

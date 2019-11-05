@@ -26,4 +26,7 @@
     <string name="genres">Genres:</string>
     <string name="director">Director:</string>
     <string name="cast">Cast:</string>
+    <string name="add_button">Add button</string>
+    <string name="fav_button">fav_button</string>
+    <string name="share_button">share_button</string>
 </resources>

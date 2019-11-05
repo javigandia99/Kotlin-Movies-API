@@ -48,6 +48,10 @@ class MovieSearchAdapter(private val listener: (Movie) -> Unit) :
             if (adult.text == "false") {
                 adult.text = "No"
             }
+            if (adult.text == "null"){
+                adult.text = "No classified"
+            }
+
             popularity.text = movie.popularity.toString()
             year.text = movie.release_date
             score.text = movie.vote_average.toString()

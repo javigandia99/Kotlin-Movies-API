@@ -13,7 +13,7 @@ import retrofit2.http.Query
 // apikey == "6d247d2725f2627d9e371751ce4e8679"
 interface MovieApi {
     @GET("search/movie")
-    suspend fun searchMovies(@Query("api_key") api_key : String,@Query("query") movie: String) : Response<MovieResults>
+    suspend fun searchMovies(@Query("api_key") api_key: String, @Query("query") movie: String): Response<MovieResults>
 
     @GET("movie/{movie_id}")
     suspend fun getMoviesDetail(@Path("movie_id") id: Int, @Query("api_key") api_key: String): Response<MovieDetail>

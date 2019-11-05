@@ -51,7 +51,7 @@ class MovieDetailActivity : AppCompatActivity() {
         detail_year.text = detail.release_date
         detail_genres_name.text = detail.genres.toString()
         detail_overview.text = detail.overview
-        Picasso.get().load(RetrofitFactory.BASE_URL+detail.backdrop_path).into(detail_movie_imageview)
+        Picasso.get().load(RetrofitFactory.BASE_URL + detail.backdrop_path).into(detail_movie_imageview)
     }
 
     private fun cast(cast: MovieDetailCast) {
