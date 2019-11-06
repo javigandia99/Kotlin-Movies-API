@@ -15,13 +15,16 @@
     <string name="tomovielist_buttom">Ir a la peliculinni</string>
     <string name="tomoviedetail_buttom">Ir a la peliculini detili</string>
     <string name="title_movielist">Movie List</string>
-    <string name="title_main">Main</string>
-    <string name="title_moviedetail">Movie Detail</string>
-    <string name="title_profile">Profile</string>
+    <string name="title_main">Principalinni</string>
+    <string name="title_moviedetail">Detallinni de Peliculinni</string>
+    <string name="title_profile">Perfilinni</string>
     <string name="entermovies">Enter Movies</string>
-    <string name="popularity">Popularity</string>
-    <string name="adult">Adult:</string>
-    <string name="genres">Genres:</string>
-    <string name="director">Director:</string>
-    <string name="cast">Cast:</string>
+    <string name="popularity">Popularinii</string>
+    <string name="adult">Adultinni:</string>
+    <string name="genres">Gennrinnis:</string>
+    <string name="director">Directorinni:</string>
+    <string name="cast">Castinni:</string>
+    <string name="add_button">Add Button</string>
+    <string name="fav_button">Fav Button</string>
+    <string name="share_button">Share Button</string>
 </resources>

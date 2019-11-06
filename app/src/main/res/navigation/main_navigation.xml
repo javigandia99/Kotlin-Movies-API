@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/fragment_movieslist"
         android:name="com.jgc.primeraapplicacion.ui.movielist.MoviesFragment"
-        android:label="Movies List"
+        android:label="Favorites Movies"
         tools:layout="@layout/fragment_movies" />
     <fragment
         android:id="@+id/fragment_profile"

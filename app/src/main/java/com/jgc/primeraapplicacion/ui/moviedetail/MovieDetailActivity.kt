@@ -48,8 +48,11 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
     }
 
     override fun crew(crew: List<DetailCast>) {
-        val firstcrew = crew[0]
-        //TODO:Implement crew to Api
-        detail_director.text = firstcrew.job
+        for (i in crew.indices) {
+            if (crew[i].job == "Director") {
+                val directorCrew = crew[i]
+                detail_director.text = directorCrew.name
+            }
+        }
     }
 }

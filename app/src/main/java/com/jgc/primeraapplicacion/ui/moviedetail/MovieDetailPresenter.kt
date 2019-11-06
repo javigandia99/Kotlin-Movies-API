@@ -35,6 +35,7 @@ class MovieDetailPresenter(private val view: MovieDetailView) {
             }
         }
     }
+
 }
 
 interface MovieDetailView {
