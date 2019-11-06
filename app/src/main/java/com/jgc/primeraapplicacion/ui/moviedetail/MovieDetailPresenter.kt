@@ -19,6 +19,8 @@ class MovieDetailPresenter(private val view: MovieDetailView) {
                 if (response.isSuccessful) {
                     val responseDetail = response.body()!!
                     view.detail(responseDetail)
+                    val responseDetailGenres = response.body()!!.genres
+                    view.genres(responseDetailGenres)
                 }
             }
 

@@ -4,10 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.jgc.primeraapplicacion.model.Movie
 import com.jgc.primeraapplicacion.R
-import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.item_movie.view.*
+import com.jgc.primeraapplicacion.model.Movie
 
 class MoviesAdapter(val movieList: List<Movie>) : RecyclerView.Adapter<MovieListViewHolder>() {
 
@@ -16,7 +14,6 @@ class MoviesAdapter(val movieList: List<Movie>) : RecyclerView.Adapter<MovieList
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieListViewHolder {
-
         return MovieListViewHolder.from(parent)
     }
 
@@ -24,19 +21,13 @@ class MoviesAdapter(val movieList: List<Movie>) : RecyclerView.Adapter<MovieList
     override fun onBindViewHolder(holder: MovieListViewHolder, position: Int) {
         val movieItem = movieList[position]
         holder.bind(movieItem)
-
         holder.itemView.setOnClickListener {
-
         }
     }
-
 }
 
 class MovieListViewHolder private constructor(val view: View) : RecyclerView.ViewHolder(view) {
-
-
     fun bind(movieItem: Movie) {
-
     }
 
     //Fun static
@@ -49,3 +40,4 @@ class MovieListViewHolder private constructor(val view: View) : RecyclerView.Vie
 
     }
 }
+//TODO: Implement all of these fragment

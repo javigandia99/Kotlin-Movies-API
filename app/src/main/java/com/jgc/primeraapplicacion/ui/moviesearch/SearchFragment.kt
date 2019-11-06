@@ -3,11 +3,11 @@ package com.jgc.primeraapplicacion.ui.moviesearch
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jgc.primeraapplicacion.R
@@ -20,10 +20,10 @@ import kotlinx.android.synthetic.main.fragment_search.*
  */
 class SearchFragment : Fragment(), MovieSearchView, SearchView.OnQueryTextListener {
 
-    lateinit var movieSearchAdapter: MovieSearchAdapter
-    lateinit var movieRecyclerView: RecyclerView
-    lateinit var searchView: SearchView
-    val presenter = MovieSearchPresenter(this)
+    private lateinit var movieSearchAdapter: MovieSearchAdapter
+    private lateinit var movieRecyclerView: RecyclerView
+    private lateinit var searchView: SearchView
+    private val presenter = MovieSearchPresenter(this)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,6 +44,7 @@ class SearchFragment : Fragment(), MovieSearchView, SearchView.OnQueryTextListen
 
         return view
     }
+
     override fun onQueryTextSubmit(query: String?): Boolean {
         return false
     }
@@ -52,11 +53,6 @@ class SearchFragment : Fragment(), MovieSearchView, SearchView.OnQueryTextListen
 
         presenter.searchClicked(newText!!)
         return false
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
     }
 
     override fun showMovies(movies: List<Movie>) {
@@ -71,7 +67,7 @@ class SearchFragment : Fragment(), MovieSearchView, SearchView.OnQueryTextListen
     }
 
     override fun showError() {
-        Log.e("1", "-----------------------------------------ERROR MOVIE SEARCH")
+        Log.e("1", "----------ERROR MOVIE SEARCH---------")
     }
 
     override fun showEmpty() {
