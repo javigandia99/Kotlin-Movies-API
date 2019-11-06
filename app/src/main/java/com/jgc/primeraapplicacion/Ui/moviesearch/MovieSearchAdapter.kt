@@ -1,5 +1,6 @@
 package com.jgc.primeraapplicacion.ui.moviesearch
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.jgc.primeraapplicacion.R
-import com.jgc.primeraapplicacion.data.RetrofitFactory
+import com.jgc.primeraapplicacion.data.remote.RetrofitFactory
 import com.jgc.primeraapplicacion.model.Movie
 import com.squareup.picasso.Picasso
 
@@ -38,6 +39,7 @@ class MovieSearchAdapter(private val listener: (Movie) -> Unit) :
         private val score = view.findViewById<TextView>(R.id.item_score)
         private val year = view.findViewById<TextView>(R.id.item_year)
 
+        @SuppressLint("SetTextI18n")
         fun bind(movie: Movie, listener: (Movie) -> Unit) {
             title.text = movie.title
             Picasso.get().load(RetrofitFactory.BASE_IMAGE_URL + movie.poster_path).into(image)

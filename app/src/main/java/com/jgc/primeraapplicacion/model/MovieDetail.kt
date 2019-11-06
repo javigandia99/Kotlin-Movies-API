@@ -8,12 +8,14 @@ data class MovieDetail(
     val original_title: String,
     val title: String,
     val release_date: String,
-    val genres: List<ListGenres>,
+    val genres: List<DetailGenres>,
+    val cast: List<DetailCast>,
+    val crew: List<DetailCast>,
     val overview: String,
     val vote_average: Float
 
 )
 
-data class ListGenres(val name: String)
+data class DetailGenres(val name: String)
 
-data class MovieDetailCast(val name: String, val job: String)
+data class DetailCast(val name: String, val job: String)

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#444141"
     tools:context=".ui.moviedetail.MovieDetailActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,7 +14,7 @@
         <ImageView
             android:id="@+id/detail_movie_imageview"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="170dp"
             android:contentDescription="@string/movieImageView"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +30,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
-            android:textSize="30sp"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/detail_movie_imageview"
             app:layout_constraintTop_toBottomOf="@+id/detail_movie_imageview"
@@ -40,7 +41,7 @@
             style="@style/profile_info_tittle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:text="@string/releasedate"
             app:layout_constraintStart_toStartOf="@+id/detail_movie_title"
             app:layout_constraintTop_toBottomOf="@+id/detail_movie_title" />
@@ -77,10 +78,11 @@
 
         <TextView
             android:id="@+id/detail_year"
+            style="@style/styleValueDetail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/year_title"
             app:layout_constraintEnd_toEndOf="@+id/detail_movie_title"
             app:layout_constraintStart_toEndOf="@id/barrier"
@@ -88,9 +90,10 @@
 
         <TextView
             android:id="@+id/detail_director"
+            style="@style/styleValueDetail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/director_title"
             app:layout_constraintEnd_toEndOf="@+id/detail_year"
             app:layout_constraintStart_toStartOf="@+id/detail_year"
@@ -98,9 +101,9 @@
 
         <TextView
             android:id="@+id/detail_cast"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
+            style="@style/styleValueDetail"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/cast_title"
             app:layout_constraintEnd_toEndOf="@+id/detail_director"
             app:layout_constraintStart_toStartOf="@+id/detail_director"
@@ -108,9 +111,10 @@
 
         <TextView
             android:id="@+id/detail_genres_name"
+            style="@style/styleValueDetail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/genres_tittle"
             app:layout_constraintEnd_toEndOf="@+id/detail_director"
             app:layout_constraintStart_toStartOf="@+id/detail_year"
@@ -128,15 +132,13 @@
             android:id="@+id/detail_overview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="32dp"
+            android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="@+id/detail_genres_name"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/director_title"
+            app:layout_constraintStart_toStartOf="@id/genres_tittle"
             app:layout_constraintTop_toBottomOf="@+id/detail_genres_name"
-            tools:text='Contrary to popular belief, Lorem Ipsum is not simply random text.
-            It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,
-             a Latind up one of the more obscure  the Renaissance. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form,
-             accompanied by English versions from the 1914 translation by H. Rackham.' />
+            tools:text='Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latind up one of the more obscure  the Renaissance. Sections 1.10.32 and 1.10.33' />
 
         <ImageView
             android:id="@+id/add_button"
@@ -146,11 +148,12 @@
             android:contentDescription="@string/add_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/fav_button"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/detail_overview"
+            app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@android:drawable/ic_input_add" />
 
         <ImageView
@@ -158,12 +161,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:contentDescription="@string/fav_button"
-            app:layout_constraintBottom_toBottomOf="@+id/add_button"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/shareButton"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toEndOf="@+id/add_button"
             app:layout_constraintTop_toTopOf="@+id/add_button"
+            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@android:drawable/btn_star_big_on" />
 
         <ImageView
@@ -177,7 +181,19 @@
             app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toEndOf="@+id/fav_button"
             app:layout_constraintTop_toTopOf="@+id/fav_button"
+            app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@android:drawable/ic_delete" />
+
+        <TextView
+            android:id="@+id/detail_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="8.0"
+            android:textColor="#FFEB3B"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/detail_movie_title"
+            app:layout_constraintTop_toBottomOf="@+id/detail_movie_title" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

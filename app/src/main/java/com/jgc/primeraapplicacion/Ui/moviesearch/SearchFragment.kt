@@ -1,7 +1,5 @@
 package com.jgc.primeraapplicacion.ui.moviesearch
 
-
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -9,9 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.SearchView
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jgc.primeraapplicacion.R
@@ -36,9 +32,7 @@ class SearchFragment : Fragment(), MovieSearchView, SearchView.OnQueryTextListen
         val view = inflater.inflate(R.layout.fragment_search, container, false)
         movieRecyclerView = view.findViewById(R.id.movieSearch_RecyclerView)
         searchView = view.findViewById(R.id.search_view)
-        searchView.setOnQueryTextListener(this@SearchFragment);
-
-        //val presenter = MovieSearchPresenter(this)
+        searchView.setOnQueryTextListener(this@SearchFragment)
 
         movieRecyclerView.layoutManager = LinearLayoutManager(this.context)
         movieRecyclerView.setHasFixedSize(true)

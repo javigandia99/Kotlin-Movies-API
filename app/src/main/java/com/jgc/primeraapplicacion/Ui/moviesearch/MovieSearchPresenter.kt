@@ -1,6 +1,6 @@
 package com.jgc.primeraapplicacion.ui.moviesearch
 
-import com.jgc.primeraapplicacion.data.RetrofitFactory
+import com.jgc.primeraapplicacion.data.remote.RetrofitFactory
 import com.jgc.primeraapplicacion.model.Movie
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
