@@ -30,6 +30,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
+            android:textColor="#7E54CE"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/detail_movie_imageview"
@@ -144,7 +145,7 @@
             android:id="@+id/add_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="64dp"
             android:contentDescription="@string/add_button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/fav_button"
@@ -190,8 +191,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="8.0"
-            android:textColor="#FFEB3B"
-            android:textSize="18sp"
+            android:textColor="#F0DA59"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="@+id/detail_movie_title"
             app:layout_constraintTop_toBottomOf="@+id/detail_movie_title" />
 
