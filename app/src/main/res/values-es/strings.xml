@@ -24,7 +24,9 @@
     <string name="genres">Generos:</string>
     <string name="director">Director:</string>
     <string name="cast">Reparto:</string>
+    <string name="nogenres">No hay generos</string>
     <string name="add_button">Añadir</string>
     <string name="fav_button">Favoritos</string>
     <string name="share_button">Compartir</string>
+
 </resources>

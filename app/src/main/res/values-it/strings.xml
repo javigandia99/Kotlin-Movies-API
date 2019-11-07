@@ -24,7 +24,9 @@
     <string name="genres">Gennrinnis:</string>
     <string name="director">Directorinni:</string>
     <string name="cast">Castinni:</string>
+    <string name="nogenres">No Generinnis</string>
     <string name="add_button">Add Button</string>
     <string name="fav_button">Fav Button</string>
     <string name="share_button">Share Button</string>
+
 </resources>

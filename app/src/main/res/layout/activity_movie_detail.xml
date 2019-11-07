@@ -190,7 +190,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="8.0"
+            tools:text="8.0"
             android:textColor="#F0DA59"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="@+id/detail_movie_title"

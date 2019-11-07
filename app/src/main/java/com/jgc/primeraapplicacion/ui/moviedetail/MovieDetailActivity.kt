@@ -28,31 +28,31 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
         detail_movie_title.text = detail.title
         detail_year.text = detail.release_date
         detail_overview.text = detail.overview
+        detail_score.text = detail.vote_average.toString()
         Picasso.get().load(RetrofitFactory.BASE_IMAGE_URL + detail.backdrop_path)
             .into(detail_movie_imageview)
     }
 
     @SuppressLint("SetTextI18n")
     override fun genres(genre: List<DetailGenres>) {
-        val firstCast = genre[0]
-        val secondCast = genre[1]
-        detail_genres_name.text = firstCast.name + ", " + secondCast.name
+        if (genre.isNotEmpty()) {
+            val genreCast = genre.joinToString(", ") { it.name }
+            detail_genres_name.text = genreCast
+        } else {
+            detail_genres_name.text = getString(R.string.nogenres)
+        }
     }
 
     @SuppressLint("SetTextI18n")
     override fun cast(cast: List<DetailCast>) {
-        val firstCast = cast[0]
-        val secondCast = cast[1]
-        val thirdCast = cast[2]
-        detail_cast.text = firstCast.name + ", " + secondCast.name + ", " + thirdCast.name
+        if (cast.isNotEmpty()) {
+            val forCast = cast.joinToString(", ", limit = 3) { it.name }
+            detail_cast.text = forCast
+        }
     }
 
     override fun crew(crew: List<DetailCast>) {
-        for (i in crew.indices) {
-            if (crew[i].job == "Director") {
-                val directorCrew = crew[i]
-                detail_director.text = directorCrew.name
-            }
-        }
+        val directorCrew = crew.filter { it.job == "Director" }.joinToString(", ") { it.name }
+        detail_director.text = directorCrew
     }
 }
