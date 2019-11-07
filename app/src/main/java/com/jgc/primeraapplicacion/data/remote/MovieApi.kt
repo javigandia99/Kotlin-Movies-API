@@ -2,9 +2,12 @@ package com.jgc.primeraapplicacion.data.remote
 
 import com.jgc.primeraapplicacion.model.MovieDetail
 import com.jgc.primeraapplicacion.model.MovieResults
-import retrofit2.*
+import retrofit2.Response
+import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import retrofit2.http.*
+import retrofit2.http.GET
+import retrofit2.http.Path
+import retrofit2.http.Query
 
 
 // apikey == "6d247d2725f2627d9e371751ce4e8679"

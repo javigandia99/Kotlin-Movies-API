@@ -63,7 +63,8 @@ class MovieSearchAdapter(private val listener: (Movie) -> Unit) :
 
         companion object {
             fun from(parent: ViewGroup): ViewHolder {
-                val view = LayoutInflater.from(parent.context).inflate(R.layout.item_movie, parent, false)
+                val view =
+                    LayoutInflater.from(parent.context).inflate(R.layout.item_movie, parent, false)
                 return ViewHolder(view)
             }
         }

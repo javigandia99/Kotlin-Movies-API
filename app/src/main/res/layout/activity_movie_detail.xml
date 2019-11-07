@@ -190,11 +190,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            tools:text="8.0"
             android:textColor="#F0DA59"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="@+id/detail_movie_title"
-            app:layout_constraintTop_toBottomOf="@+id/detail_movie_title" />
+            app:layout_constraintTop_toBottomOf="@+id/detail_movie_title"
+            tools:text="8.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
