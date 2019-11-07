@@ -48,6 +48,8 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
         if (cast.isNotEmpty()) {
             val forCast = cast.joinToString(", ", limit = 3) { it.name }
             detail_cast.text = forCast
+        }else {
+            detail_cast.text = getString(R.string.nocast)
         }
     }
 

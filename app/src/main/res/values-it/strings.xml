@@ -28,5 +28,6 @@
     <string name="add_button">Add Button</string>
     <string name="fav_button">Fav Button</string>
     <string name="share_button">Share Button</string>
+    <string name="nocast">No castinni</string>
 
 </resources>
