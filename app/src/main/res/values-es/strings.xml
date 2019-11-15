@@ -29,6 +29,16 @@
     <string name="add_button">Añadir</string>
     <string name="fav_button">Favoritos</string>
     <string name="share_button">Compartir</string>
+    <string name="login">Login</string>
+    <string name="clear">Clear</string>
+    <string name="password">Password:</string>
+    <string name="password_edit_hint">Password</string>
+    <string name="username_edit_hint">Username</string>
+    <string name="logout_item">Logout</string>
+    <string name="delete_all_item">Delete All</string>
+    <string name="by_title">By title</string>
+    <string name="by_date_added">By date added</string>
+    <string name="toorder_item">To Order</string>
 
 
 </resources>
