@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FirstApplication</string>
+    <string name="app_name">JGC Movies</string>
     <string name="count_text">The button has not been pressed yet!</string>
     <string name="first_button">First Button</string>
     <string name="button_pressed">Button has been pressed!</string>
@@ -11,11 +11,24 @@
     <string name="description">Description:</string>
     <string name="movieImageView">Movie Image</string>
     <string name="releasedate">Release Date:</string>
-    <string name="genre">Genre:</string>
+    <string name="overview">Overview:</string>
     <string name="tomovielist_buttom">Go to Movie List</string>
     <string name="tomoviedetail_buttom">Go to Movie Detail</string>
     <string name="title_movielist">Movie List</string>
     <string name="title_main">Main</string>
     <string name="title_moviedetail">Movie Detail</string>
     <string name="title_profile">Profile</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="entermovies">Enter Movies</string>
+    <string name="popularity">Popularity:</string>
+    <string name="adult">Only Adult:</string>
+    <string name="genres">Genres:</string>
+    <string name="director">Director:</string>
+    <string name="cast">Cast:</string>
+    <string name="add_button">Add button</string>
+    <string name="fav_button">fav_button</string>
+    <string name="share_button">share_button</string>
+    <string name="nogenres">No Genres</string>
+    <string name="nocast">No cast</string>
 </resources>

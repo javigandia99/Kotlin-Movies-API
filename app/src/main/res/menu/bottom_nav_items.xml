@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/fragment_movieslist"
+        android:checkable="false"
+        android:enabled="false"
+        android:icon="@android:drawable/btn_star"
+        android:title="@string/title_movielist"
+        android:visible="true" />
+    <item
+        android:id="@+id/fragment_search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="@android:string/search_go" />
+    <item
+        android:id="@+id/fragment_profile"
+        android:icon="@android:drawable/ic_menu_view"
+        android:title="@string/title_profile" />
+</menu>

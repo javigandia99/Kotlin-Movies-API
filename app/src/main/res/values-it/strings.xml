@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"> Aplicacione  in Spagetti</string>
+    <string name="app_name">JGC Movies</string>
     <string name="count_text">El botonni no se preciono</string>
     <string name="first_button">Primerinni Button</string>
     <string name="button_pressed">Button Spagetti presionati!</string>
@@ -11,11 +11,23 @@
     <string name="description">Description:</string>
     <string name="movieImageView">Movie Imaginii</string>
     <string name="releasedate">Fechachitii:</string>
-    <string name="genre">Generinii:</string>
+    <string name="overview">Generinii:</string>
     <string name="tomovielist_buttom">Ir a la peliculinni</string>
     <string name="tomoviedetail_buttom">Ir a la peliculini detili</string>
     <string name="title_movielist">Movie List</string>
-    <string name="title_main">Main</string>
-    <string name="title_moviedetail">Movie Detail</string>
-    <string name="title_profile">Profile</string>
+    <string name="title_main">Principalinni</string>
+    <string name="title_moviedetail">Detallinni de Peliculinni</string>
+    <string name="title_profile">Perfilinni</string>
+    <string name="entermovies">Enter Movies</string>
+    <string name="popularity">Popularinii</string>
+    <string name="adult">Adultinni:</string>
+    <string name="genres">Gennrinnis:</string>
+    <string name="director">Directorinni:</string>
+    <string name="cast">Castinni:</string>
+    <string name="nogenres">No Generinnis</string>
+    <string name="add_button">Add Button</string>
+    <string name="fav_button">Fav Button</string>
+    <string name="share_button">Share Button</string>
+    <string name="nocast">No castinni</string>
+
 </resources>
