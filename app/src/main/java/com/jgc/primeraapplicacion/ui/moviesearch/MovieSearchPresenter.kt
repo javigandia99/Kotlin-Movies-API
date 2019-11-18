@@ -7,7 +7,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class MovieSearchPresenter(val view: MovieSearchView) {
+class MovieSearchPresenter(private val view: MovieSearchView) {
 
     fun searchClicked(searchmovie: String) {
         if (searchmovie.isEmpty()) return
