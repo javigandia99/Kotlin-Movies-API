@@ -14,10 +14,10 @@ import com.jgc.primeraapplicacion.data.remote.RetrofitRemoteRepository
 import com.jgc.primeraapplicacion.ui.main.MainActivity
 
 class LoginActivity : AppCompatActivity(), LoginView {
-    lateinit var usernameTxt: EditText
-    lateinit var passwordTxt: EditText
-    lateinit var loginButton: Button
-    lateinit var clearButton: Button
+    private lateinit var usernameTxt: EditText
+    private lateinit var passwordTxt: EditText
+    private lateinit var loginButton: Button
+    private lateinit var clearButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

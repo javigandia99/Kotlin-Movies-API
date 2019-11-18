@@ -1,4 +1,4 @@
-package com.jgc.primeraapplicacion.ui.movielist
+package com.jgc.primeraapplicacion.ui.favoriteslist
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,18 +7,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.jgc.primeraapplicacion.R
 import com.jgc.primeraapplicacion.model.Movie
 
-class MoviesAdapter(val movieList: List<Movie>) : RecyclerView.Adapter<MovieListViewHolder>() {
+class FavoritesAdapter(private val movieList: List<Movie>) : RecyclerView.Adapter<FavoritesViewHolder>() {
 
     override fun getItemCount(): Int {
         return movieList.size
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieListViewHolder {
-        return MovieListViewHolder.from(parent)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoritesViewHolder {
+        return FavoritesViewHolder.from(parent)
     }
 
 
-    override fun onBindViewHolder(holder: MovieListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: FavoritesViewHolder, position: Int) {
         val movieItem = movieList[position]
         holder.bind(movieItem)
         holder.itemView.setOnClickListener {
@@ -26,16 +26,15 @@ class MoviesAdapter(val movieList: List<Movie>) : RecyclerView.Adapter<MovieList
     }
 }
 
-class MovieListViewHolder private constructor(val view: View) : RecyclerView.ViewHolder(view) {
-    fun bind(movieItem: Movie) {
+class  FavoritesViewHolder private constructor(val view: View) : RecyclerView.ViewHolder(view) {
+    fun bind(favoritesItem: Movie) {
     }
 
     //Fun static
     companion object {
-        fun from(parent: ViewGroup): MovieListViewHolder {
-            val view =
-                LayoutInflater.from(parent.context).inflate(R.layout.item_movie, parent, false)
-            return MovieListViewHolder(view)
+        fun from(parent: ViewGroup): FavoritesViewHolder {
+            val view = LayoutInflater.from(parent.context).inflate(R.layout.item_movie, parent, false)
+            return FavoritesViewHolder(view)
         }
 
     }

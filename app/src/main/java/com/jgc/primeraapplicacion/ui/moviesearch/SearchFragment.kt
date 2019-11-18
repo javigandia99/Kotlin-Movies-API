@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -34,7 +35,7 @@ class SearchFragment : Fragment(), MovieSearchView, SearchView.OnQueryTextListen
         searchView = view.findViewById(R.id.search_view)
         searchView.setOnQueryTextListener(this@SearchFragment)
 
-        movieRecyclerView.layoutManager = LinearLayoutManager(this.context)
+        movieRecyclerView.layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
         movieRecyclerView.setHasFixedSize(true)
 
         movieSearchAdapter = MovieSearchAdapter {
@@ -67,7 +68,7 @@ class SearchFragment : Fragment(), MovieSearchView, SearchView.OnQueryTextListen
     }
 
     override fun showError() {
-        Log.e("1", "----------ERROR MOVIE SEARCH---------")
+        Toast.makeText(activity, "Error: We could not have showed you the movies", Toast.LENGTH_SHORT).show()
     }
 
     override fun showEmpty() {

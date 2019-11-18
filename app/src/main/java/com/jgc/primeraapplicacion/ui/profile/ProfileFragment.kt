@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment
 import com.jgc.primeraapplicacion.R
 import com.jgc.primeraapplicacion.data.local.PreferencesLocalRepository
 import com.jgc.primeraapplicacion.ui.login.LoginActivity
-import com.jgc.primeraapplicacion.ui.moviedetail.MovieDetailActivity
 
 /**
  * A simple [Fragment] subclass.

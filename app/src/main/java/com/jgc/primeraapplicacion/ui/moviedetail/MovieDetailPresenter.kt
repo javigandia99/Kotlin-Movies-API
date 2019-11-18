@@ -10,6 +10,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class MovieDetailPresenter(private val view: MovieDetailView) {
+
     fun takeId(movieId: Int) {
         val movieApi = RetrofitFactory.getMovieApi()
 
