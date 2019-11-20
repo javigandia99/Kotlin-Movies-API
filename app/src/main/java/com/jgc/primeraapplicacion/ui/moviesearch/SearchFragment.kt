@@ -1,8 +1,8 @@
 package com.jgc.primeraapplicacion.ui.moviesearch
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +12,10 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jgc.primeraapplicacion.R
+import com.jgc.primeraapplicacion.data.local.PreferenceLoginLocalRepository
+import com.jgc.primeraapplicacion.data.remote.RemoteRepository
+import com.jgc.primeraapplicacion.data.remote.RetrofitFactory
+import com.jgc.primeraapplicacion.data.remote.RetrofitRemoteRepository
 import com.jgc.primeraapplicacion.model.Movie
 import com.jgc.primeraapplicacion.ui.moviedetail.MovieDetailActivity
 import kotlinx.android.synthetic.main.fragment_search.*
@@ -24,7 +28,7 @@ class SearchFragment : Fragment(), MovieSearchView, SearchView.OnQueryTextListen
     private lateinit var movieSearchAdapter: MovieSearchAdapter
     private lateinit var movieRecyclerView: RecyclerView
     private lateinit var searchView: SearchView
-    private val presenter = MovieSearchPresenter(this)
+    private lateinit var presenter: MovieSearchPresenter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,9 +37,16 @@ class SearchFragment : Fragment(), MovieSearchView, SearchView.OnQueryTextListen
         val view = inflater.inflate(R.layout.fragment_search, container, false)
         movieRecyclerView = view.findViewById(R.id.movieSearch_RecyclerView)
         searchView = view.findViewById(R.id.search_view)
+
+        val remoteRepository: RemoteRepository =
+            RetrofitRemoteRepository(RetrofitFactory.getMovieApi())
+        val localRepository = PreferenceLoginLocalRepository(this.activity!!.getSharedPreferences("login_preference",Context.MODE_PRIVATE))
+        presenter = MovieSearchPresenter(this, localRepository, remoteRepository)
+
         searchView.setOnQueryTextListener(this@SearchFragment)
 
-        movieRecyclerView.layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
+        movieRecyclerView.layoutManager =
+            LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
         movieRecyclerView.setHasFixedSize(true)
 
         movieSearchAdapter = MovieSearchAdapter {
@@ -68,7 +79,11 @@ class SearchFragment : Fragment(), MovieSearchView, SearchView.OnQueryTextListen
     }
 
     override fun showError() {
-        Toast.makeText(activity, "Error: We could not have showed you the movies", Toast.LENGTH_SHORT).show()
+        Toast.makeText(
+            activity,
+            "Error: We could not have showed you the movies",
+            Toast.LENGTH_SHORT
+        ).show()
     }
 
     override fun showEmpty() {

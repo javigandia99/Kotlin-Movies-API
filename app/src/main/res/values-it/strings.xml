@@ -31,6 +31,7 @@
     <string name="nocast">No castinni</string>
     <string name="login">Login</string>
     <string name="clear">Clear</string>
+    <string name="username">Username:</string>
     <string name="password">Password:</string>
     <string name="password_edit_hint">Password</string>
     <string name="username_edit_hint">Username</string>

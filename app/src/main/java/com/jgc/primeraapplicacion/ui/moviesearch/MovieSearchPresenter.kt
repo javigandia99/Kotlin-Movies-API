@@ -1,5 +1,7 @@
 package com.jgc.primeraapplicacion.ui.moviesearch
 
+import com.jgc.primeraapplicacion.data.local.LoginLocalRepository
+import com.jgc.primeraapplicacion.data.remote.RemoteRepository
 import com.jgc.primeraapplicacion.data.remote.RetrofitFactory
 import com.jgc.primeraapplicacion.model.Movie
 import kotlinx.coroutines.CoroutineScope
@@ -7,7 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class MovieSearchPresenter(val view: MovieSearchView) {
+class MovieSearchPresenter(val view: MovieSearchView, val localRepository: LoginLocalRepository, val remoteRepository: RemoteRepository) {
 
     fun searchClicked(searchmovie: String) {
         if (searchmovie.isEmpty()) return

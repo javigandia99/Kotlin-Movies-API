@@ -35,8 +35,8 @@
     <string name="clear">Clear</string>
     <string name="password">Password:</string>
     <string name="username">Username:</string>
-    <string name="password_edit_hint">Password</string>
-    <string name="username_edit_hint">Username</string>
+    <string name="password_edit_hint">1234</string>
+    <string name="username_edit_hint">root</string>
     <string name="logout_item">Logout</string>
     <string name="delete_all_item">Delete All</string>
     <string name="by_title">By title</string>

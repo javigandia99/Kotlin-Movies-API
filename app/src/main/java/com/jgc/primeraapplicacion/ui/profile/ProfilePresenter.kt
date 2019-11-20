@@ -1,18 +1,15 @@
 package com.jgc.primeraapplicacion.ui.profile
 
-import com.jgc.primeraapplicacion.data.local.LocalRepository
+import com.jgc.primeraapplicacion.data.local.LoginLocalRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class ProfilePresenter(
-    val view: ProfileFragment,
-    private val localRepository: LocalRepository
-) {
+class ProfilePresenter(val view: ProfileFragment, private val loginLocalRepository: LoginLocalRepository) {
     fun logoutClicked() {
         CoroutineScope(Dispatchers.IO).launch {
-            localRepository.deleteLoggedUser()
+            loginLocalRepository.deleteLoggedUser()
             withContext(Dispatchers.Main) {
                 view.goToLogin()
             }

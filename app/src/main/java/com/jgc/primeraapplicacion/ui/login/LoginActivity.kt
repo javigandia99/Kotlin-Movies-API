@@ -8,7 +8,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.jgc.primeraapplicacion.R
-import com.jgc.primeraapplicacion.data.local.PreferencesLocalRepository
+import com.jgc.primeraapplicacion.data.local.PreferenceLoginLocalRepository
 import com.jgc.primeraapplicacion.data.remote.RetrofitFactory
 import com.jgc.primeraapplicacion.data.remote.RetrofitRemoteRepository
 import com.jgc.primeraapplicacion.ui.main.MainActivity
@@ -28,7 +28,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
         loginButton = findViewById(R.id.login_button)
         clearButton = findViewById(R.id.clear_button)
 
-        val localRepository = PreferencesLocalRepository(
+        val localRepository = PreferenceLoginLocalRepository(
             getSharedPreferences(
                 "login_preference",
                 Context.MODE_PRIVATE

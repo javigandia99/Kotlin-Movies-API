@@ -36,6 +36,11 @@ class MovieDetailPresenter(private val view: MovieDetailView) {
             }
         }
     }
+
+    fun addFavorites(){
+        //TODO: implement insert
+        view.showFavorites()
+    }
 }
 
 interface MovieDetailView {
@@ -43,4 +48,5 @@ interface MovieDetailView {
     fun genres(genre: List<DetailGenres>)
     fun cast(cast: List<DetailCast>)
     fun crew(crew: List<DetailCast>)
+    fun showFavorites()
 }

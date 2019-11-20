@@ -1,6 +1,6 @@
 package com.jgc.primeraapplicacion.ui.login
 
-import com.jgc.primeraapplicacion.data.local.LocalRepository
+import com.jgc.primeraapplicacion.data.local.LoginLocalRepository
 import com.jgc.primeraapplicacion.data.remote.RemoteRepository
 import com.jgc.primeraapplicacion.model.User
 import kotlinx.coroutines.CoroutineScope
@@ -10,12 +10,12 @@ import kotlinx.coroutines.withContext
 
 class LoginPresenter(
     private val view: LoginActivity,
-    private val localRepository: LocalRepository,
+    private val loginLocalRepository: LoginLocalRepository,
     private val remoteRepository: RemoteRepository
 ){
     fun init(){
         CoroutineScope(Dispatchers.IO).launch{
-        val loggedUser = localRepository.getLoggedUser()
+        val loggedUser = loginLocalRepository.getLoggedUser()
             if (loggedUser != null) {
                 view.enterInApp()
             }
@@ -38,7 +38,7 @@ class LoginPresenter(
         CoroutineScope(Dispatchers.IO).launch {
             val loggedUser = remoteRepository.login(username, password)
             if (loggedUser != null) {
-                localRepository.setLoggedUser(User(username, password))
+                loginLocalRepository.setLoggedUser(User(username, password))
                 withContext(Dispatchers.Main) {
                     view.showLoginSuccessful()
                 }

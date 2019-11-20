@@ -1,21 +1,28 @@
 package com.jgc.primeraapplicacion.ui.favoriteslist
 
 
-import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.jgc.primeraapplicacion.R
-import com.jgc.primeraapplicacion.data.local.PreferencesLocalRepository
-import com.jgc.primeraapplicacion.data.remote.RetrofitFactory
-import com.jgc.primeraapplicacion.data.remote.RetrofitRemoteRepository
+import com.jgc.primeraapplicacion.data.local.DatabaseFactory
+import com.jgc.primeraapplicacion.data.local.FavoritesEntity
+import com.jgc.primeraapplicacion.data.local.RoomLocalRepository
+import com.jgc.primeraapplicacion.ui.moviedetail.MovieDetailActivity
 
 /**
  * A simple [Fragment] subclass.
  */
 class FavoritesFragment : Fragment(), FavoritesView {
+
+    private lateinit var favoritesMovieAdapter: FavoritesAdapter
+    private lateinit var favoritesRecyclerView: RecyclerView
     private lateinit var presenter: FavoritesPresenter
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -23,12 +30,28 @@ class FavoritesFragment : Fragment(), FavoritesView {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_favorites_movies, container, false)
         setHasOptionsMenu(true)
+        favoritesRecyclerView = view.findViewById(R.id.favorites_recycler_view)
 
-        val presenter = FavoritesPresenter(this)
+
+        favoritesRecyclerView.layoutManager =
+            LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
+        favoritesRecyclerView.setHasFixedSize(true)
+
+        favoritesMovieAdapter = FavoritesAdapter {
+            presenter.movieClicked(it)
+        }
+        favoritesRecyclerView.adapter = favoritesMovieAdapter
+
+        val localRepository = RoomLocalRepository(DatabaseFactory.getDatabase(this.context!!))
+
+        val presenter = FavoritesPresenter(this, localRepository)
+
+        presenter.init()
 
 
         return view
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.fav_menu, menu)
@@ -55,8 +78,14 @@ class FavoritesFragment : Fragment(), FavoritesView {
         }
     }
 
+    override fun openMovieDetail(id: Int) {
+        val intent = Intent(this.context, MovieDetailActivity::class.java)
+        intent.putExtra("id", id)
+        startActivity(intent)
+    }
+
     override fun deleteAll() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        //TODO: implement to delete
     }
 
     override fun showByDateAdded() {
@@ -65,6 +94,10 @@ class FavoritesFragment : Fragment(), FavoritesView {
 
     override fun showByTitle() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun listPassed(favoritesEntity: List<FavoritesEntity>) {
+        favoritesMovieAdapter.addFavorites(favoritesEntity)
     }
 
 }

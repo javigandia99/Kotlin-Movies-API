@@ -1,19 +1,23 @@
 package com.jgc.primeraapplicacion.ui.moviedetail
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.jgc.primeraapplicacion.R
 import com.jgc.primeraapplicacion.data.remote.RetrofitFactory
 import com.jgc.primeraapplicacion.model.DetailCast
 import com.jgc.primeraapplicacion.model.DetailGenres
 import com.jgc.primeraapplicacion.model.MovieDetail
+import com.jgc.primeraapplicacion.ui.favoriteslist.FavoritesFragment
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_movie_detail.*
 
 class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
 
     private val presenter = MovieDetailPresenter(this)
+    private lateinit var favButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +26,11 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
 
         val movieId = intent.extras?.get("id")
         presenter.takeId(movieId as Int)
+
+        favButton = findViewById(R.id.fav_button)
+        favButton.setOnClickListener {
+        presenter.addFavorites()
+        }
     }
 
     override fun detail(detail: MovieDetail) {
@@ -56,5 +65,10 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
     override fun crew(crew: List<DetailCast>) {
         val directorCrew = crew.filter { it.job == "Director" }.joinToString(", ") { it.name }
         detail_director.text = directorCrew
+    }
+
+    override fun showFavorites() {
+        val intent = Intent(this, FavoritesFragment::class.java)
+        startActivity(intent)
     }
 }
