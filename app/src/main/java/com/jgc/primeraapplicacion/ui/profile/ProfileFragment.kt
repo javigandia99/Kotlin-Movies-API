@@ -9,7 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.jgc.primeraapplicacion.R
-import com.jgc.primeraapplicacion.data.local.PreferencesLocalRepository
+import com.jgc.primeraapplicacion.data.local.PreferenceLoginLocalRepository
 import com.jgc.primeraapplicacion.ui.login.LoginActivity
 
 /**
@@ -35,9 +35,9 @@ class ProfileFragment : Fragment(), ProfileView {
         ageText = view.findViewById(R.id.profile_age)
         descriptionText = view.findViewById(R.id.profile_description)
 
-        val localRepository = PreferencesLocalRepository(
+        val localRepository = PreferenceLoginLocalRepository(
             this.context!!.getSharedPreferences(
-                "username",
+                "login_preference",
                 Context.MODE_PRIVATE
             )
         )
