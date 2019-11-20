@@ -1,23 +1,23 @@
 package com.jgc.primeraapplicacion.ui.moviedetail
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.jgc.primeraapplicacion.R
+import com.jgc.primeraapplicacion.data.local.DatabaseFactory
+import com.jgc.primeraapplicacion.data.local.RoomLocalRepository
 import com.jgc.primeraapplicacion.data.remote.RetrofitFactory
 import com.jgc.primeraapplicacion.model.DetailCast
 import com.jgc.primeraapplicacion.model.DetailGenres
 import com.jgc.primeraapplicacion.model.MovieDetail
-import com.jgc.primeraapplicacion.ui.favoriteslist.FavoritesFragment
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_movie_detail.*
 
 class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
 
-    private val presenter = MovieDetailPresenter(this)
-    private lateinit var favButton: Button
+    private lateinit var presenter: MovieDetailPresenter
+    private lateinit var favButton: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,11 +25,15 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
         setTitle(R.string.title_moviedetail)
 
         val movieId = intent.extras?.get("id")
-        presenter.takeId(movieId as Int)
+
+        val localRepository = RoomLocalRepository(DatabaseFactory.getDatabase(this).favoritesDao())
+        presenter = MovieDetailPresenter(this, localRepository)
+        presenter.init(movieId as Int)
 
         favButton = findViewById(R.id.fav_button)
         favButton.setOnClickListener {
-        presenter.addFavorites()
+            presenter.setFavorite(movieId)
+
         }
     }
 
@@ -67,8 +71,13 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
         detail_director.text = directorCrew
     }
 
-    override fun showFavorites() {
-        val intent = Intent(this, FavoritesFragment::class.java)
-        startActivity(intent)
+    override fun checkFav(movieId: Int) {
+        if (movieId != 0) {
+
+            favButton.setImageResource(android.R.drawable.btn_star_big_on)
+
+        } else {
+            favButton.setImageResource(android.R.drawable.btn_star_big_off)
+        }
     }
 }

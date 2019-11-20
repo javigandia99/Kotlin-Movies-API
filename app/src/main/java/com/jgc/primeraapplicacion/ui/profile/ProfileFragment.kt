@@ -84,7 +84,7 @@ class ProfileFragment : Fragment(), ProfileView {
         //FLAG_ACTIVITY_NEW_TASK tells the system, create a new Task and set LoginActivity as the first activity
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(intent)
-        this.activity!!.finish()
+        activity!!.finish()
 
     }
 }

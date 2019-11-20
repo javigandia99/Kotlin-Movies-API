@@ -8,6 +8,8 @@ data class MovieDetail(
     val original_title: String,
     val title: String,
     val release_date: String,
+    val adult: Boolean,
+    val popularity: Float,
     val genres: List<DetailGenres>,
     val cast: List<DetailCast>,
     val crew: List<DetailCast>,

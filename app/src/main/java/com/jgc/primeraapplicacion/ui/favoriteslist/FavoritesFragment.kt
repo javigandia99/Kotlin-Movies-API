@@ -32,7 +32,6 @@ class FavoritesFragment : Fragment(), FavoritesView {
         setHasOptionsMenu(true)
         favoritesRecyclerView = view.findViewById(R.id.favorites_recycler_view)
 
-
         favoritesRecyclerView.layoutManager =
             LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
         favoritesRecyclerView.setHasFixedSize(true)
@@ -42,16 +41,14 @@ class FavoritesFragment : Fragment(), FavoritesView {
         }
         favoritesRecyclerView.adapter = favoritesMovieAdapter
 
-        val localRepository = RoomLocalRepository(DatabaseFactory.getDatabase(this.context!!))
+        val localRepository = RoomLocalRepository(DatabaseFactory.getDatabase(this.context!!).favoritesDao())
 
         val presenter = FavoritesPresenter(this, localRepository)
 
         presenter.init()
 
-
         return view
     }
-
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.fav_menu, menu)
@@ -84,16 +81,16 @@ class FavoritesFragment : Fragment(), FavoritesView {
         startActivity(intent)
     }
 
-    override fun deleteAll() {
-        //TODO: implement to delete
+    override fun showDeleteAll() {
+        Toast.makeText(activity, "Delete All Favorite Movies Successful!", Toast.LENGTH_SHORT).show()
     }
 
     override fun showByDateAdded() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Toast.makeText(activity, "Order by current time Successful!", Toast.LENGTH_SHORT).show()
     }
 
     override fun showByTitle() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        Toast.makeText(activity, "Order by title Successful!", Toast.LENGTH_SHORT).show()
     }
 
     override fun listPassed(favoritesEntity: List<FavoritesEntity>) {

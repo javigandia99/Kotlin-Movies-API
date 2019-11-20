@@ -21,12 +21,11 @@ class PreferenceLoginLocalRepository(private val sharedPreferences: SharedPrefer
         } else {
             null
         }
-
     }
 
     override suspend fun deleteLoggedUser() {
         sharedPreferences.edit().clear().apply()
-        Log.e(1.toString(),"------------------------ERROR")
+        Log.e(1.toString(), "------------------------ERROR")
     }
 
 

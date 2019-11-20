@@ -8,7 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.jgc.primeraapplicacion.R
 import com.jgc.primeraapplicacion.data.local.FavoritesEntity
+import com.jgc.primeraapplicacion.data.remote.RetrofitFactory
 import com.jgc.primeraapplicacion.model.Movie
+import com.squareup.picasso.Picasso
 
 class FavoritesAdapter(private val listener: (FavoritesEntity) -> Unit) : RecyclerView.Adapter<FavoritesViewHolder>() {
     private var favorites = listOf<FavoritesEntity>()
@@ -39,6 +41,7 @@ class  FavoritesViewHolder private constructor(val view: View) : RecyclerView.Vi
 
     fun bind(entities: FavoritesEntity, listener: (FavoritesEntity) -> Unit) {
         title.text = entities.title
+        Picasso.get().load(RetrofitFactory.BASE_IMAGE_URL + entities.poster_path).into(image)
         adult.text = entities.adult.toString()
         if (adult.text == "true") {
             adult.text = "Only Adults"
@@ -62,7 +65,6 @@ class  FavoritesViewHolder private constructor(val view: View) : RecyclerView.Vi
             val view = LayoutInflater.from(parent.context).inflate(R.layout.item_movie, parent, false)
             return FavoritesViewHolder(view)
         }
-
     }
 }
 //TODO: Implement all of these fragment

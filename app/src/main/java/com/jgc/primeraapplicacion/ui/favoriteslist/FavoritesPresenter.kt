@@ -8,9 +8,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class FavoritesPresenter(
-    private val view: FavoritesFragment,
-    private val localRepository: LocalRepository
-) {
+    private val view: FavoritesFragment, private val localRepository: LocalRepository) {
     fun init() {
         CoroutineScope(Dispatchers.IO).launch {
             val listFavorites = localRepository.getAllMoviesFavorites()
@@ -25,7 +23,11 @@ class FavoritesPresenter(
     }
 
     fun onDeleteAllClicked() {
-        view.deleteAll()
+        CoroutineScope(Dispatchers.IO).launch {
+            //localRepository.deleteFavorite(FavoritesEntity() )
+            withContext(Dispatchers.Main) {}
+            view.showDeleteAll()
+        }
     }
 
     fun onOrderDateAdded() {
@@ -38,7 +40,7 @@ class FavoritesPresenter(
 }
 
 interface FavoritesView {
-    fun deleteAll()
+    fun showDeleteAll()
     fun showByDateAdded()
     fun showByTitle()
     fun openMovieDetail(id: Int)

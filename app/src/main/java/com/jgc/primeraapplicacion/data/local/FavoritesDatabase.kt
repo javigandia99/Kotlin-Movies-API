@@ -5,14 +5,14 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = arrayOf(FavoritesEntity::class), version = 1, exportSchema = false)
+@Database(entities = [FavoritesEntity::class], version = 2, exportSchema = false)
 abstract class FavoritesDatabase: RoomDatabase() {
     abstract fun favoritesDao(): FavoritesDao
 }
 
 object DatabaseFactory {
     fun getDatabase(context: Context): FavoritesDatabase {
-        return Room.databaseBuilder(context, FavoritesDatabase::class.java, "favoritesdatabases")
+        return Room.databaseBuilder(context, FavoritesDatabase::class.java, "favoritesDatabases")
             .build()
     }
 
