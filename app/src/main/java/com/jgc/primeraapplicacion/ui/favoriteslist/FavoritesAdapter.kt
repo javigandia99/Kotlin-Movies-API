@@ -20,16 +20,6 @@ class FavoritesAdapter(private val listener: (FavoritesEntity) -> Unit) :
         notifyDataSetChanged()
     }
 
-    fun deleteFavorites(listFavorites: List<FavoritesEntity>) {
-        this.favorites = listFavorites
-        notifyDataSetChanged()
-    }
-
-    fun orderByTitle() {
-        this.favorites
-        notifyDataSetChanged()
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoritesViewHolder {
         return FavoritesViewHolder.from(parent)
     }

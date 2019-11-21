@@ -70,7 +70,6 @@ class MovieDetailPresenter(
                 )
 
                 responseDatabase = localRepository.checkFavorite(id)
-                Log.e("", responseDatabase.toString())
                 if (responseDatabase == null) {
                     localRepository.insertFavorite(entity)
                     withContext(Dispatchers.Main) {

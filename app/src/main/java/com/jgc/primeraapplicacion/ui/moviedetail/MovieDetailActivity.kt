@@ -3,6 +3,7 @@ package com.jgc.primeraapplicacion.ui.moviedetail
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.jgc.primeraapplicacion.R
 import com.jgc.primeraapplicacion.data.local.DatabaseFactory
@@ -73,8 +74,10 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
     override fun checkFav(response: Int?) {
         if (response == null) {
             favButton.setImageResource(android.R.drawable.btn_star_big_on)
+            Toast.makeText(this, "Movie inserted into favorites", Toast.LENGTH_SHORT).show()
         } else {
             favButton.setImageResource(android.R.drawable.btn_star_big_off)
+            Toast.makeText(this, "Movie deleted from favorites", Toast.LENGTH_SHORT).show()
         }
     }
 }

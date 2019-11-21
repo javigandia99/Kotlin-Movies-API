@@ -24,27 +24,38 @@ class FavoritesPresenter(
     }
 
     fun onDeleteAllClicked() {
-        /*CoroutineScope(Dispatchers.IO).launch {
+        CoroutineScope(Dispatchers.IO).launch {
             val deleteFavorites = localRepository.deleteAllFavorites()
-            withContext(Dispatchers.Main) {}
-            view.showDeleteAll(deleteFavorites)
-        }*/
+            withContext(Dispatchers.Main) {
+                view.showDeleteAll(deleteFavorites)
+            }
+        }
     }
 
     fun onOrderDateAdded() {
-        view.showByDateAdded()
+        CoroutineScope(Dispatchers.IO).launch {
+            val orderByDate = localRepository.getOrderByDate()
+            withContext(Dispatchers.Main) {
+                view.showByDateAdded(orderByDate)
+            }
+        }
     }
 
     fun onOrderTitle() {
-        view.showByTitle()
+        CoroutineScope(Dispatchers.IO).launch {
+            val orderByTitle = localRepository.getOrderByTitle()
+            withContext(Dispatchers.Main) {
+                view.showByTitle(orderByTitle)
+            }
+        }
     }
 }
 
 interface FavoritesView {
     fun listPassed(favoritesEntity: List<FavoritesEntity>)
     fun showDeleteAll(favoritesEntity: List<FavoritesEntity>)
-    fun showByDateAdded()
-    fun showByTitle()
+    fun showByDateAdded(favoritesEntity: List<FavoritesEntity>)
+    fun showByTitle(favoritesEntity: List<FavoritesEntity>)
     fun openMovieDetail(id: Int)
 
 }
