@@ -14,9 +14,6 @@ import com.jgc.primeraapplicacion.data.local.FavoritesEntity
 import com.jgc.primeraapplicacion.data.local.RoomLocalRepository
 import com.jgc.primeraapplicacion.ui.moviedetail.MovieDetailActivity
 
-/**
- * A simple [Fragment] subclass.
- */
 class FavoritesFragment : Fragment(), FavoritesView {
 
     private lateinit var favoritesMovieAdapter: FavoritesAdapter
@@ -87,7 +84,8 @@ class FavoritesFragment : Fragment(), FavoritesView {
 
     override fun showDeleteAll(favoritesEntity: List<FavoritesEntity>) {
         favoritesMovieAdapter.addFavorites(favoritesEntity)
-        Toast.makeText(activity, "Delete All Favorite Movies Successful!", Toast.LENGTH_SHORT).show()
+        Toast.makeText(activity, "Delete All Favorite Movies Successful!", Toast.LENGTH_SHORT)
+            .show()
     }
 
     override fun showByDateAdded(favoritesEntity: List<FavoritesEntity>) {

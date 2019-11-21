@@ -8,14 +8,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class LoginPresenter(
-    private val view: LoginActivity,
-    private val loginLocalRepository: LoginLocalRepository,
-    private val remoteRepository: RemoteRepository
-){
-    fun init(){
-        CoroutineScope(Dispatchers.IO).launch{
-        val loggedUser = loginLocalRepository.getLoggedUser()
+class LoginPresenter(private val view: LoginActivity, private val loginLocalRepository: LoginLocalRepository, private val remoteRepository: RemoteRepository) {
+    fun init() {
+        CoroutineScope(Dispatchers.IO).launch {
+            val loggedUser = loginLocalRepository.getLoggedUser()
             if (loggedUser != null) {
                 view.enterInApp()
             }
@@ -55,7 +51,7 @@ class LoginPresenter(
     }
 }
 
-interface LoginView{
+interface LoginView {
     fun showLoginSuccessful()
     fun showLoginError()
     fun showFieldRequiredError(emptyList: List<String>)

@@ -12,8 +12,7 @@ import com.jgc.primeraapplicacion.data.local.FavoritesEntity
 import com.jgc.primeraapplicacion.data.remote.RetrofitFactory
 import com.squareup.picasso.Picasso
 
-class FavoritesAdapter(private val listener: (FavoritesEntity) -> Unit) :
-    RecyclerView.Adapter<FavoritesViewHolder>() {
+class FavoritesAdapter(private val listener: (FavoritesEntity) -> Unit) : RecyclerView.Adapter<FavoritesViewHolder>() {
     private var favorites = listOf<FavoritesEntity>()
 
     fun addFavorites(listFavorites: List<FavoritesEntity>) {

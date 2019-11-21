@@ -4,8 +4,8 @@ import android.content.SharedPreferences
 import android.util.Log
 import com.jgc.primeraapplicacion.model.User
 
-class PreferenceLoginLocalRepository(private val sharedPreferences: SharedPreferences) :
-    LoginLocalRepository {
+class PreferenceLoginLocalRepository(private val sharedPreferences: SharedPreferences) : LoginLocalRepository {
+
     override suspend fun setLoggedUser(user: User) {
         val editor = sharedPreferences.edit()
         editor.putString("username", user.username)
@@ -27,6 +27,4 @@ class PreferenceLoginLocalRepository(private val sharedPreferences: SharedPrefer
         sharedPreferences.edit().clear().apply()
         Log.e(1.toString(), "------------------------ERROR")
     }
-
-
 }

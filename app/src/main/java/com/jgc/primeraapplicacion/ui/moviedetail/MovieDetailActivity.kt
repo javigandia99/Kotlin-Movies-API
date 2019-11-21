@@ -31,6 +31,7 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
 
         val localRepository = RoomLocalRepository(DatabaseFactory.getDatabase(this).favoritesDao())
         val remoteRepository: RemoteRepository = RetrofitRemoteRepository(RetrofitFactory.getMovieApi())
+
         presenter = MovieDetailPresenter(this, localRepository, remoteRepository)
         presenter.init(movieId as Int)
 

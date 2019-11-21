@@ -19,7 +19,7 @@ class RetrofitRemoteRepository(private val movieApi: MovieApi) : RemoteRepositor
     }
 
     override suspend fun login(username: String, password: String): User? {
-        return if (username.equals("root") && password.equals("1234")) {
+        return if (username == "root" && password == "1234") {
             User(username, password)
         } else {
             null

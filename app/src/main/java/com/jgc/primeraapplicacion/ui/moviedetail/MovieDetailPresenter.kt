@@ -54,16 +54,7 @@ class MovieDetailPresenter(private val view: MovieDetailView, private val localR
                 val average = response.body()!!.vote_average
                 val currentTimestamp = System.currentTimeMillis().toString()
 
-                val entity = FavoritesEntity(
-                    id,
-                    image,
-                    title,
-                    date,
-                    adult,
-                    popularity,
-                    average,
-                    currentTimestamp
-                )
+                val entity = FavoritesEntity(id, image, title, date, adult, popularity, average, currentTimestamp)
 
                 responseDatabase = localRepository.checkFavorite(id)
                 if (responseDatabase == null) {

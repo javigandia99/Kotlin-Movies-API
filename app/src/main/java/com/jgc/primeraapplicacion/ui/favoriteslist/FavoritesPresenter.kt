@@ -7,9 +7,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class FavoritesPresenter(
-    private val view: FavoritesFragment, private val localRepository: LocalRepository
-) {
+class FavoritesPresenter(private val view: FavoritesFragment, private val localRepository: LocalRepository) {
+
     fun init() {
         CoroutineScope(Dispatchers.IO).launch {
             val listFavorites = localRepository.getAllMoviesFavorites()

@@ -7,6 +7,7 @@ import androidx.room.Query
 
 @Dao
 interface FavoritesDao {
+
     @Query("SELECT * FROM moviesFavorites")
     fun getAllMoviesFavorites(): MutableList<FavoritesEntity>
 
@@ -27,4 +28,5 @@ interface FavoritesDao {
 
     @Query("DELETE FROM moviesFavorites")
     fun deleteAllFavorites()
+    
 }
