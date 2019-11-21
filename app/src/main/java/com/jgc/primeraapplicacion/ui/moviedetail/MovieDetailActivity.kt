@@ -8,7 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.jgc.primeraapplicacion.R
 import com.jgc.primeraapplicacion.data.local.DatabaseFactory
 import com.jgc.primeraapplicacion.data.local.RoomLocalRepository
+import com.jgc.primeraapplicacion.data.remote.RemoteRepository
 import com.jgc.primeraapplicacion.data.remote.RetrofitFactory
+import com.jgc.primeraapplicacion.data.remote.RetrofitRemoteRepository
 import com.jgc.primeraapplicacion.model.DetailCast
 import com.jgc.primeraapplicacion.model.DetailGenres
 import com.jgc.primeraapplicacion.model.MovieDetail
@@ -28,7 +30,8 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
         val movieId = intent.extras?.get("id")
 
         val localRepository = RoomLocalRepository(DatabaseFactory.getDatabase(this).favoritesDao())
-        presenter = MovieDetailPresenter(this, localRepository)
+        val remoteRepository: RemoteRepository = RetrofitRemoteRepository(RetrofitFactory.getMovieApi())
+        presenter = MovieDetailPresenter(this, localRepository, remoteRepository)
         presenter.init(movieId as Int)
 
         favButton = findViewById(R.id.fav_button)
@@ -37,7 +40,7 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
         }
     }
 
-    override fun detail(detail: MovieDetail) {
+    override fun showDetail(detail: MovieDetail) {
         detail_movie_title.text = detail.title
         detail_year.text = detail.release_date
         detail_overview.text = detail.overview
@@ -47,7 +50,7 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
     }
 
     @SuppressLint("SetTextI18n")
-    override fun genres(genre: List<DetailGenres>) {
+    override fun showGenres(genre: List<DetailGenres>) {
         if (genre.isNotEmpty()) {
             val genreCast = genre.joinToString(", ") { it.name }
             detail_genres_name.text = genreCast
@@ -57,7 +60,7 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
     }
 
     @SuppressLint("SetTextI18n")
-    override fun cast(cast: List<DetailCast>) {
+    override fun showCast(cast: List<DetailCast>) {
         if (cast.isNotEmpty()) {
             val forCast = cast.joinToString(", ", limit = 3) { it.name }
             detail_cast.text = forCast
@@ -66,8 +69,9 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
         }
     }
 
-    override fun crew(crew: List<DetailCast>) {
-        val directorCrew = crew.filter { it.job == "Director" }.joinToString(", ") { it.name }
+    override fun showCrew(crew: List<DetailCast>) {
+        val directorCrew =
+            crew.filter { it.job == "Director" }.joinToString(", ", limit = 2) { it.name }
         detail_director.text = directorCrew
     }
 

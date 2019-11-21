@@ -2,7 +2,7 @@ package com.jgc.primeraapplicacion.ui.moviedetail
 
 import com.jgc.primeraapplicacion.data.local.FavoritesEntity
 import com.jgc.primeraapplicacion.data.local.LocalRepository
-import com.jgc.primeraapplicacion.data.remote.RetrofitFactory
+import com.jgc.primeraapplicacion.data.remote.RemoteRepository
 import com.jgc.primeraapplicacion.model.DetailCast
 import com.jgc.primeraapplicacion.model.DetailGenres
 import com.jgc.primeraapplicacion.model.MovieDetail
@@ -11,42 +11,39 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class MovieDetailPresenter(
-    private val view: MovieDetailView,
-    private val localRepository: LocalRepository
-) {
+class MovieDetailPresenter(private val view: MovieDetailView, private val localRepository: LocalRepository, private val remoteRepository: RemoteRepository) {
 
     fun init(movieId: Int) {
-        val movieApi = RetrofitFactory.getMovieApi()
-
         CoroutineScope(Dispatchers.IO).launch {
-            val response = movieApi.getMoviesDetail(movieId, "6d247d2725f2627d9e371751ce4e8679")
+            val response =
+                remoteRepository.getMoviesDetail(movieId, "6d247d2725f2627d9e371751ce4e8679")
             withContext(Dispatchers.Main) {
                 if (response.isSuccessful) {
                     val responseDetail = response.body()!!
-                    view.detail(responseDetail)
+                    view.showDetail(responseDetail)
                     val responseDetailGenres = response.body()!!.genres
-                    view.genres(responseDetailGenres)
+                    view.showGenres(responseDetailGenres)
                 }
             }
 
-            val responseCast = movieApi.getMoviesCast(movieId, "6d247d2725f2627d9e371751ce4e8679")
+            val responseCast =
+                remoteRepository.getMoviesCast(movieId, "6d247d2725f2627d9e371751ce4e8679")
             withContext(Dispatchers.Main) {
                 if (responseCast.isSuccessful) {
                     val responseDetailCast = responseCast.body()!!.cast
-                    view.cast(responseDetailCast)
+                    view.showCast(responseDetailCast)
                     val responseDetailCrew = responseCast.body()!!.crew
-                    view.crew(responseDetailCrew)
+                    view.showCrew(responseDetailCrew)
                 }
             }
         }
     }
 
     fun setFavorite(movieId: Int) {
-        val movieApi = RetrofitFactory.getMovieApi()
         var responseDatabase: Int?
         CoroutineScope(Dispatchers.IO).launch {
-            val response = movieApi.getMoviesDetail(movieId, "6d247d2725f2627d9e371751ce4e8679")
+            val response =
+                remoteRepository.getMoviesDetail(movieId, "6d247d2725f2627d9e371751ce4e8679")
             if (response.isSuccessful) {
                 val id = response.body()!!.id
                 val image = response.body()!!.poster_path
@@ -86,9 +83,9 @@ class MovieDetailPresenter(
 }
 
 interface MovieDetailView {
-    fun detail(detail: MovieDetail)
-    fun genres(genre: List<DetailGenres>)
-    fun cast(cast: List<DetailCast>)
-    fun crew(crew: List<DetailCast>)
+    fun showDetail(detail: MovieDetail)
+    fun showGenres(genre: List<DetailGenres>)
+    fun showCast(cast: List<DetailCast>)
+    fun showCrew(crew: List<DetailCast>)
     fun checkFav(response: Int?)
 }

@@ -16,6 +16,7 @@ import com.jgc.primeraapplicacion.ui.login.LoginActivity
  * A simple [Fragment] subclass.
  */
 class ProfileFragment : Fragment(), ProfileView {
+
     private lateinit var nameText: TextView
     private lateinit var imageView: ImageView
     private lateinit var cityText: TextView

@@ -7,6 +7,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class ProfilePresenter(val view: ProfileFragment, private val loginLocalRepository: LoginLocalRepository) {
+
     fun logoutClicked() {
         CoroutineScope(Dispatchers.IO).launch {
             loginLocalRepository.deleteLoggedUser()

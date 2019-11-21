@@ -1,6 +1,5 @@
 package com.jgc.primeraapplicacion.ui.moviesearch
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,7 +11,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jgc.primeraapplicacion.R
-import com.jgc.primeraapplicacion.data.local.PreferenceLoginLocalRepository
 import com.jgc.primeraapplicacion.data.remote.RemoteRepository
 import com.jgc.primeraapplicacion.data.remote.RetrofitFactory
 import com.jgc.primeraapplicacion.data.remote.RetrofitRemoteRepository
@@ -38,10 +36,8 @@ class SearchFragment : Fragment(), MovieSearchView, SearchView.OnQueryTextListen
         movieRecyclerView = view.findViewById(R.id.movieSearch_RecyclerView)
         searchView = view.findViewById(R.id.search_view)
 
-        val remoteRepository: RemoteRepository =
-            RetrofitRemoteRepository(RetrofitFactory.getMovieApi())
-        val localRepository = PreferenceLoginLocalRepository(this.activity!!.getSharedPreferences("login_preference",Context.MODE_PRIVATE))
-        presenter = MovieSearchPresenter(this, localRepository, remoteRepository)
+        val remoteRepository: RemoteRepository = RetrofitRemoteRepository(RetrofitFactory.getMovieApi())
+        presenter = MovieSearchPresenter(this, remoteRepository)
 
         searchView.setOnQueryTextListener(this@SearchFragment)
 
