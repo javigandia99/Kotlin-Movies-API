@@ -11,26 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b1cd05c-1427-46df-a350-08ec8530c02e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/FavoritesDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/FavoritesDao.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/FavoritesDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/FavoritesDatabase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/LocalRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/LocalRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/RoomLocalRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/RoomLocalRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/remote/RemoteRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/remote/RemoteRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/ui/favoriteslist/FavoritesFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/ui/favoriteslist/FavoritesFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/ui/favoriteslist/FavoritesPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/ui/favoriteslist/FavoritesPresenter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/ui/moviedetail/MovieDetailActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/ui/moviedetail/MovieDetailActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/ui/moviedetail/MovieDetailPresenter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/ui/moviedetail/MovieDetailPresenter.kt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,41 +74,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/FavoritesDao.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+            <state relative-caret-position="204">
+              <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/RoomLocalRepository.kt">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/FavoritesEntity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="573">
-              <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/ui/moviedetail/MovieDetailPresenter.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="82" column="13" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
+            <state relative-caret-position="255">
+              <caret line="15" column="33" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="33" />
               <folding>
-                <element signature="e#51#540#0" expanded="true" />
+                <element signature="e#47#138#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/LoginLocalRepository.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -137,15 +100,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="454">
               <caret line="75" column="74" lean-forward="true" selection-start-line="75" selection-start-column="74" selection-end-line="75" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/LocalRepository.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -216,13 +170,13 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/FavoritesDatabase.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/remote/RemoteRepository.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/ui/favoriteslist/FavoritesAdapter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/FavoritesDao.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/RoomLocalRepository.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/LocalRepository.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/ui/favoriteslist/FavoritesPresenter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/ui/favoriteslist/FavoritesFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/ui/moviedetail/MovieDetailActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/ui/moviedetail/MovieDetailPresenter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/FavoritesDao.kt" />
       </list>
     </option>
   </component>
@@ -805,16 +759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/FavoritesEntity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-          <folding>
-            <element signature="e#47#138#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/ui/favoriteslist/FavoritesAdapter.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -836,24 +780,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/RoomLocalRepository.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/LocalRepository.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/FavoritesDao.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -867,10 +797,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/LoginLocalRepository.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/ui/moviedetail/MovieDetailPresenter.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="901">
+          <caret line="85" column="1" lean-forward="true" selection-start-line="85" selection-start-column="1" selection-end-line="85" selection-end-column="1" />
+          <folding>
+            <element signature="e#51#540#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -881,13 +814,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/ui/moviedetail/MovieDetailPresenter.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/LoginLocalRepository.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="82" column="13" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/RoomLocalRepository.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/FavoritesEntity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="33" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="33" />
           <folding>
-            <element signature="e#51#540#0" expanded="true" />
+            <element signature="e#47#138#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/jgc/primeraapplicacion/data/local/FavoritesDao.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
         </state>
       </provider>
     </entry>

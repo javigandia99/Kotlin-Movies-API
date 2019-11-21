@@ -13,7 +13,7 @@ interface FavoritesDao {
     @Query("SELECT id FROM moviesFavorites WHERE id Like :id")
     fun checkFavorite(id: Int): Int?
 
-    @Query("SELECT * FROM moviesFavorites ORDER BY date ")
+    @Query("SELECT * FROM moviesFavorites ORDER BY dateadded ")
     fun getOrderByDate(): MutableList<FavoritesEntity>
 
     @Query("SELECT * FROM moviesFavorites ORDER BY title")
