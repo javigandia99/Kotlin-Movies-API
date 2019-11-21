@@ -14,7 +14,7 @@
     <string name="overview">Descripción:</string>
     <string name="tomovielist_buttom">Ir a Lista de Peliculas</string>
     <string name="tomoviedetail_buttom">Ir a Movie Detail</string>
-    <string name="title_movielist">Listado de Peliculas</string>
+    <string name="title_movielist">Favoritos</string>
     <string name="title_main">Principal</string>
     <string name="title_moviedetail">Detalles de Peliculas</string>
     <string name="title_profile">Perfil</string>
@@ -29,17 +29,17 @@
     <string name="add_button">Añadir</string>
     <string name="fav_button">Favoritos</string>
     <string name="share_button">Compartir</string>
-    <string name="login">Login</string>
-    <string name="clear">Clear</string>
-    <string name="username">Username:</string>
-    <string name="password">Password:</string>
-    <string name="password_edit_hint">Password</string>
-    <string name="username_edit_hint">Username</string>
-    <string name="logout_item">Logout</string>
-    <string name="delete_all_item">Delete All</string>
-    <string name="by_title">By title</string>
-    <string name="by_date_added">By date added</string>
-    <string name="toorder_item">To Order</string>
+    <string name="login">Iniciar sesion</string>
+    <string name="clear">Borrar campos</string>
+    <string name="username">Usuario:</string>
+    <string name="password">Contraseña:</string>
+    <string name="username_edit_hint">root</string>
+    <string name="password_edit_hint">1234</string>
+    <string name="logout_item">Salir</string>
+    <string name="delete_all_item">Borrar todo</string>
+    <string name="by_title">Por titulo</string>
+    <string name="by_date_added">Por fecha de añadido</string>
+    <string name="toorder_item">Ordenar por</string>
     <string name="logo_app_image_login">Logo App Image Login</string>
 
 
