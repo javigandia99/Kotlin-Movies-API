@@ -42,4 +42,5 @@
     <string name="by_title">By title</string>
     <string name="by_date_added">By date added</string>
     <string name="toorder_item">To Order</string>
+    <string name="logo_app_image_login">Logo App Image Login</string>
 </resources>
