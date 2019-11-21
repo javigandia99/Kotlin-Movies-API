@@ -20,7 +20,7 @@ class RoomLocalRepository(private val favoritesDao: FavoritesDao) : LocalReposit
         favoritesDao.insertFavorite(movieDB)
     }
 
-    override suspend fun checkFavorite(id: Int): MutableList<FavoritesEntity> {
+    override suspend fun checkFavorite(id: Int): Int? {
         return favoritesDao.checkFavorite(id)
     }
 
@@ -35,9 +35,9 @@ class RoomLocalRepository(private val favoritesDao: FavoritesDao) : LocalReposit
     override suspend fun deleteFavorite(favoriteEntry: FavoritesEntity) {
         favoritesDao.deleteFavorite(favoriteEntry)
     }
-
+/*
     override suspend fun deleteAllFavorites(): MutableList<FavoritesEntity> {
         return favoritesDao.deleteAllFavorites()
     }
-
+*/
 }

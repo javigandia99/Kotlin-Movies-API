@@ -30,8 +30,14 @@ class FavoritesFragment : Fragment(), FavoritesView {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_favorites_movies, container, false)
         setHasOptionsMenu(true)
-        favoritesRecyclerView = view.findViewById(R.id.favorites_recycler_view)
 
+        val localRepository =
+            RoomLocalRepository(DatabaseFactory.getDatabase(this.context!!).favoritesDao())
+
+        presenter = FavoritesPresenter(this, localRepository)
+        presenter.init()
+
+        favoritesRecyclerView = view.findViewById(R.id.favorites_recycler_view)
         favoritesRecyclerView.layoutManager =
             LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
         favoritesRecyclerView.setHasFixedSize(true)
@@ -40,12 +46,6 @@ class FavoritesFragment : Fragment(), FavoritesView {
             presenter.movieClicked(it)
         }
         favoritesRecyclerView.adapter = favoritesMovieAdapter
-
-        val localRepository = RoomLocalRepository(DatabaseFactory.getDatabase(this.context!!).favoritesDao())
-
-        val presenter = FavoritesPresenter(this, localRepository)
-
-        presenter.init()
 
         return view
     }
@@ -81,8 +81,14 @@ class FavoritesFragment : Fragment(), FavoritesView {
         startActivity(intent)
     }
 
-    override fun showDeleteAll() {
-        Toast.makeText(activity, "Delete All Favorite Movies Successful!", Toast.LENGTH_SHORT).show()
+    override fun listPassed(favoritesEntity: List<FavoritesEntity>) {
+        favoritesMovieAdapter.addFavorites(favoritesEntity)
+    }
+
+    override fun showDeleteAll(favoritesEntity: List<FavoritesEntity>) {
+        favoritesMovieAdapter.deleteFavorites(favoritesEntity)
+        Toast.makeText(activity, "Delete All Favorite Movies Successful!", Toast.LENGTH_SHORT)
+            .show()
     }
 
     override fun showByDateAdded() {
@@ -90,11 +96,7 @@ class FavoritesFragment : Fragment(), FavoritesView {
     }
 
     override fun showByTitle() {
+        favoritesMovieAdapter.orderByTitle()
         Toast.makeText(activity, "Order by title Successful!", Toast.LENGTH_SHORT).show()
     }
-
-    override fun listPassed(favoritesEntity: List<FavoritesEntity>) {
-        favoritesMovieAdapter.addFavorites(favoritesEntity)
-    }
-
 }

@@ -10,8 +10,8 @@ interface FavoritesDao {
     @Query("SELECT * FROM moviesFavorites")
     fun getAllMoviesFavorites(): MutableList<FavoritesEntity>
 
-    @Query("SELECT * FROM moviesFavorites WHERE id Like :id")
-    fun checkFavorite(id : Int): MutableList<FavoritesEntity>
+    @Query("SELECT id FROM moviesFavorites WHERE id Like :id")
+    fun checkFavorite(id : Int): Int?
 
     @Query("SELECT * FROM moviesFavorites ORDER BY date ")
     fun getOrderByDate(): MutableList<FavoritesEntity>
@@ -25,6 +25,6 @@ interface FavoritesDao {
     @Delete
     fun deleteFavorite(favoriteEntry: FavoritesEntity)
 
-    @Query("DELETE FROM moviesFavorites")
-    fun deleteAllFavorites(): MutableList<FavoritesEntity>
+    //@Query("DELETE FROM moviesFavorites")
+    //fun deleteAllFavorites(): MutableList<FavoritesEntity>
 }

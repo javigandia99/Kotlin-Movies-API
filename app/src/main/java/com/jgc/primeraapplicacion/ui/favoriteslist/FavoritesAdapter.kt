@@ -9,14 +9,24 @@ import androidx.recyclerview.widget.RecyclerView
 import com.jgc.primeraapplicacion.R
 import com.jgc.primeraapplicacion.data.local.FavoritesEntity
 import com.jgc.primeraapplicacion.data.remote.RetrofitFactory
-import com.jgc.primeraapplicacion.model.Movie
 import com.squareup.picasso.Picasso
 
-class FavoritesAdapter(private val listener: (FavoritesEntity) -> Unit) : RecyclerView.Adapter<FavoritesViewHolder>() {
+class FavoritesAdapter(private val listener: (FavoritesEntity) -> Unit) :
+    RecyclerView.Adapter<FavoritesViewHolder>() {
     private var favorites = listOf<FavoritesEntity>()
 
     fun addFavorites(listFavorites: List<FavoritesEntity>) {
         this.favorites = listFavorites
+        notifyDataSetChanged()
+    }
+
+    fun deleteFavorites(listFavorites: List<FavoritesEntity>) {
+        this.favorites = listFavorites
+        notifyDataSetChanged()
+    }
+
+    fun orderByTitle() {
+        this.favorites
         notifyDataSetChanged()
     }
 
@@ -31,7 +41,7 @@ class FavoritesAdapter(private val listener: (FavoritesEntity) -> Unit) : Recycl
     }
 }
 
-class  FavoritesViewHolder private constructor(val view: View) : RecyclerView.ViewHolder(view) {
+class FavoritesViewHolder private constructor(val view: View) : RecyclerView.ViewHolder(view) {
     private val title = view.findViewById<TextView>(R.id.item_title)
     private val image = view.findViewById<ImageView>(R.id.item_image)
     private val adult = view.findViewById<TextView>(R.id.item_adult)
@@ -62,9 +72,9 @@ class  FavoritesViewHolder private constructor(val view: View) : RecyclerView.Vi
     //Fun static
     companion object {
         fun from(parent: ViewGroup): FavoritesViewHolder {
-            val view = LayoutInflater.from(parent.context).inflate(R.layout.item_movie, parent, false)
+            val view =
+                LayoutInflater.from(parent.context).inflate(R.layout.item_movie, parent, false)
             return FavoritesViewHolder(view)
         }
     }
 }
-//TODO: Implement all of these fragment

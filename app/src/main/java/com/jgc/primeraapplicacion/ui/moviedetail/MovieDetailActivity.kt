@@ -33,7 +33,6 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
         favButton = findViewById(R.id.fav_button)
         favButton.setOnClickListener {
             presenter.setFavorite(movieId)
-
         }
     }
 
@@ -71,11 +70,9 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
         detail_director.text = directorCrew
     }
 
-    override fun checkFav(movieId: Int) {
-        if (movieId != 0) {
-
+    override fun checkFav(response: Int?) {
+        if (response == null) {
             favButton.setImageResource(android.R.drawable.btn_star_big_on)
-
         } else {
             favButton.setImageResource(android.R.drawable.btn_star_big_off)
         }
