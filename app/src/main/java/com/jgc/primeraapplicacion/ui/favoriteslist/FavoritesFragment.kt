@@ -86,9 +86,8 @@ class FavoritesFragment : Fragment(), FavoritesView {
     }
 
     override fun showDeleteAll(favoritesEntity: List<FavoritesEntity>) {
-        // favoritesMovieAdapter.addFavorites(favoritesEntity)
-        Toast.makeText(activity, "Delete All Favorite Movies Successful!", Toast.LENGTH_SHORT)
-            .show()
+        favoritesMovieAdapter.addFavorites(favoritesEntity)
+        Toast.makeText(activity, "Delete All Favorite Movies Successful!", Toast.LENGTH_SHORT).show()
     }
 
     override fun showByDateAdded(favoritesEntity: List<FavoritesEntity>) {
@@ -100,5 +99,10 @@ class FavoritesFragment : Fragment(), FavoritesView {
         favoritesMovieAdapter.addFavorites(favoritesEntity)
 
         Toast.makeText(activity, "Order by title Successful!", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onResume() {
+        presenter.init()
+        super.onResume()
     }
 }

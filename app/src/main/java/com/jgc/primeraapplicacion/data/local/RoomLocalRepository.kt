@@ -35,9 +35,9 @@ class RoomLocalRepository(private val favoritesDao: FavoritesDao) : LocalReposit
     override suspend fun deleteFavorite(favoriteEntry: FavoritesEntity) {
         favoritesDao.deleteFavorite(favoriteEntry)
     }
-/*
-    override suspend fun deleteAllFavorites(): MutableList<FavoritesEntity> {
+
+    override suspend fun deleteAllFavorites() {
         return favoritesDao.deleteAllFavorites()
     }
-*/
+
 }

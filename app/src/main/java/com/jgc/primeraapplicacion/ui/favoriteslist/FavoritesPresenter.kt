@@ -25,9 +25,9 @@ class FavoritesPresenter(
 
     fun onDeleteAllClicked() {
         CoroutineScope(Dispatchers.IO).launch {
-            val deleteFavorites = localRepository.deleteAllFavorites()
+            localRepository.deleteAllFavorites()
             withContext(Dispatchers.Main) {
-                view.showDeleteAll(deleteFavorites)
+                init()
             }
         }
     }

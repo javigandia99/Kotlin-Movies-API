@@ -80,4 +80,5 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
             Toast.makeText(this, "Movie deleted from favorites", Toast.LENGTH_SHORT).show()
         }
     }
+
 }

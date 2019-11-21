@@ -1,6 +1,5 @@
 package com.jgc.primeraapplicacion.ui.moviedetail
 
-import android.util.Log
 import com.jgc.primeraapplicacion.data.local.FavoritesEntity
 import com.jgc.primeraapplicacion.data.local.LocalRepository
 import com.jgc.primeraapplicacion.data.remote.RetrofitFactory
@@ -45,7 +44,7 @@ class MovieDetailPresenter(
 
     fun setFavorite(movieId: Int) {
         val movieApi = RetrofitFactory.getMovieApi()
-        var responseDatabase: Int? = null
+        var responseDatabase: Int?
         CoroutineScope(Dispatchers.IO).launch {
             val response = movieApi.getMoviesDetail(movieId, "6d247d2725f2627d9e371751ce4e8679")
             if (response.isSuccessful) {
@@ -82,8 +81,6 @@ class MovieDetailPresenter(
                     }
                 }
             }
-
-
         }
     }
 }
