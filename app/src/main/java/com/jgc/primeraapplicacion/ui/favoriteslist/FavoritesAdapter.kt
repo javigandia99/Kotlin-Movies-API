@@ -1,5 +1,6 @@
 package com.jgc.primeraapplicacion.ui.favoriteslist
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,6 +40,7 @@ class FavoritesViewHolder private constructor(val view: View) : RecyclerView.Vie
     private val score = view.findViewById<TextView>(R.id.item_score)
     private val year = view.findViewById<TextView>(R.id.item_year)
 
+    @SuppressLint("SetTextI18n")
     fun bind(entities: FavoritesEntity, listener: (FavoritesEntity) -> Unit) {
         title.text = entities.title
         Picasso.get().load(RetrofitFactory.BASE_IMAGE_URL + entities.poster_path).into(image)
