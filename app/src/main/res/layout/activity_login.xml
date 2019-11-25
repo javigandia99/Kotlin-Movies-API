@@ -55,13 +55,11 @@
     <Button
         android:id="@+id/login_button"
         android:layout_width="0dp"
-
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-
         android:layout_marginEnd="32dp"
-        android:background="#AD01EB08"
+        android:background="@drawable/rounded_button_login"
         android:text="@string/login"
         app:layout_constraintEnd_toEndOf="@+id/password_edit_txt"
         app:layout_constraintStart_toStartOf="@+id/password_edit_txt"
@@ -72,11 +70,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:background="#9EFC0B0B"
         android:text="@string/clear"
         app:layout_constraintEnd_toEndOf="@+id/login_button"
         app:layout_constraintStart_toStartOf="@+id/login_button"
-        app:layout_constraintTop_toBottomOf="@+id/login_button" />
+        app:layout_constraintTop_toBottomOf="@+id/login_button"
+        android:background="@drawable/rounded_button_clear"/>
 
     <ImageView
         android:id="@+id/imageView"
@@ -86,6 +84,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clear_button"
+        app:layout_constraintTop_toBottomOf="@+id/error_txt"
         app:srcCompat="@mipmap/iconmovie" />
+
+    <TextView
+        android:id="@+id/error_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        tools:text="Errors"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/clear_button"
+        app:layout_constraintStart_toStartOf="@+id/clear_button"
+        app:layout_constraintTop_toBottomOf="@+id/clear_button"
+        android:textColor="#E2FA0606"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

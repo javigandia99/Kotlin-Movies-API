@@ -29,8 +29,11 @@ class FavoritesAdapter(private val listener: (FavoritesEntity) -> Unit) : Recycl
     override fun onBindViewHolder(holder: FavoritesViewHolder, position: Int) {
         holder.bind(favorites[position], listener)
     }
-}
 
+    fun getFavAtPosition(position: Int): FavoritesEntity? {
+        return favorites[position]
+    }
+}
 class FavoritesViewHolder private constructor(val view: View) : RecyclerView.ViewHolder(view) {
     private val title = view.findViewById<TextView>(R.id.item_title)
     private val image = view.findViewById<ImageView>(R.id.item_image)

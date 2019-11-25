@@ -1,10 +1,12 @@
 package com.jgc.primeraapplicacion.ui.login
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.jgc.primeraapplicacion.R
@@ -18,6 +20,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
     private lateinit var passwordTxt: EditText
     private lateinit var loginButton: Button
     private lateinit var clearButton: Button
+    private lateinit var errorTxt: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +30,7 @@ class LoginActivity : AppCompatActivity(), LoginView {
         passwordTxt = findViewById(R.id.password_edit_txt)
         loginButton = findViewById(R.id.login_button)
         clearButton = findViewById(R.id.clear_button)
+        errorTxt = findViewById(R.id.error_txt)
 
         val localRepository = PreferenceLoginLocalRepository(
             getSharedPreferences(
@@ -57,12 +61,10 @@ class LoginActivity : AppCompatActivity(), LoginView {
         clearFields()
     }
 
+    @SuppressLint("SetTextI18n")
     override fun showFieldRequiredError(emptyList: List<String>) {
-        Toast.makeText(
-            this,
-            "The fields ${emptyList.joinToString()} are required",
-            Toast.LENGTH_SHORT
-        ).show()
+        Toast.makeText(this, "Login error", Toast.LENGTH_SHORT).show()
+        errorTxt.text= "The fields ${emptyList.joinToString()} are required"
     }
 
     override fun clearFields() {

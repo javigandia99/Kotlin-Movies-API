@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jgc.primeraapplicacion.R
@@ -43,6 +44,28 @@ class FavoritesFragment : Fragment(), FavoritesView {
             presenter.movieClicked(it)
         }
         favoritesRecyclerView.adapter = favoritesMovieAdapter
+
+        // Add the functionality to swipe items in the recycler view to delete that item
+        val helper = ItemTouchHelper(
+            object : ItemTouchHelper.SimpleCallback(
+                0,
+                ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
+            ) {
+                //Not implementing onMove() in this app
+                override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
+                    return false
+                }
+
+                // When the use swipes a favorite, delete that favorite movie from the database.
+                override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                    val position = viewHolder.adapterPosition
+                    val favoriteDelete: FavoritesEntity? = favoritesMovieAdapter.getFavAtPosition(position)
+                    // Call to presenter to delete favorite selected movie
+                    presenter.deleteSwiped(favoriteDelete)
+                }
+            })
+        // Attach the item touch helper to the recycler view
+        helper.attachToRecyclerView(favoritesRecyclerView)
 
         return view
     }
@@ -99,8 +122,13 @@ class FavoritesFragment : Fragment(), FavoritesView {
         Toast.makeText(activity, "Order by title Successful!", Toast.LENGTH_SHORT).show()
     }
 
+    override fun showDeleteFavorite(favoritesEntity: FavoritesEntity?) {
+        Toast.makeText(activity, "Delete $favoritesEntity of favorites" , Toast.LENGTH_SHORT).show()
+    }
+
     override fun onResume() {
-        presenter.init()
         super.onResume()
+        presenter.init()
+
     }
 }
