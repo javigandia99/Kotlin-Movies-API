@@ -70,10 +70,15 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     override fun showCrew(crew: List<DetailCast>) {
         val directorCrew =
             crew.filter { it.job == "Director" }.joinToString(", ", limit = 2) { it.name }
-        detail_director.text = directorCrew
+       if(crew.isNotEmpty()) {
+           detail_director.text = directorCrew
+       }else{
+           detail_director.text = "No Director"
+       }
     }
 
     override fun checkFav(response: Int?) {

@@ -26,6 +26,7 @@ class FavoritesPresenter(private val view: FavoritesFragment, private val localR
         CoroutineScope(Dispatchers.IO).launch {
             localRepository.deleteAllFavorites()
             withContext(Dispatchers.Main) {
+                view.showDeleteAll()
                 init()
             }
         }
@@ -63,7 +64,7 @@ class FavoritesPresenter(private val view: FavoritesFragment, private val localR
 
 interface FavoritesView {
     fun listPassed(favoritesEntity: List<FavoritesEntity>)
-    fun showDeleteAll(favoritesEntity: List<FavoritesEntity>)
+    fun showDeleteAll()
     fun showByDateAdded(favoritesEntity: List<FavoritesEntity>)
     fun showByTitle(favoritesEntity: List<FavoritesEntity>)
     fun openMovieDetail(id: Int)
