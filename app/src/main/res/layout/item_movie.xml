@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="150dp"
     android:layout_margin="5dp"
-    android:background="@color/colorPrimaryDark">
+    android:background="@drawable/rounded_item">
 
     <TextView
         android:id="@+id/item_adult"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:textColor="#FFFFFF"
+        android:textColor="#272727"
         android:textSize="12sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/overview"
         app:layout_constraintEnd_toEndOf="@+id/item_score"
@@ -24,21 +24,20 @@
         android:id="@+id/item_title"
         style="@style/profile_info_value"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         android:textColor="@color/tittle"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/item_score"
         app:layout_constraintStart_toEndOf="@+id/item_image"
         app:layout_constraintTop_toTopOf="@+id/item_image"
         tools:text="Movie Title" />
 
     <ImageView
         android:id="@+id/item_image"
-        android:layout_width="117dp"
+        android:layout_width="110dp"
         android:layout_height="139dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="12dp"
         android:contentDescription="@string/movieImageView"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -52,7 +51,7 @@
         android:id="@+id/item_year"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
+        style="@style/profile_info_value"
         app:layout_constraintBaseline_toBaselineOf="@+id/releaseDate"
         app:layout_constraintStart_toStartOf="@+id/item_popularity"
         tools:text="Movie Year" />
@@ -61,8 +60,7 @@
         android:id="@+id/item_popularity"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:textSize="12sp"
+        style="@style/profile_info_value"
         app:layout_constraintBaseline_toBaselineOf="@+id/popularity"
         app:layout_constraintEnd_toEndOf="@+id/item_adult"
         app:layout_constraintStart_toStartOf="@+id/item_adult"
@@ -83,7 +81,7 @@
         style="@style/profile_info_tittle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:text="@string/adult"
         app:layout_constraintStart_toStartOf="@+id/item_title"
         app:layout_constraintTop_toBottomOf="@+id/item_title" />
@@ -102,12 +100,15 @@
         android:id="@+id/item_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/rounded_score"
+        android:padding="4dp"
         android:textColor="#FFEB3B"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/item_title"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/item_title"
+        app:layout_constraintTop_toTopOf="@+id/item_title"
         tools:text="score " />
 
     <androidx.constraintlayout.widget.Barrier
