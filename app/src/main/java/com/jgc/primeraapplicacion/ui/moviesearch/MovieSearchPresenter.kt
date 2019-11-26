@@ -1,28 +1,27 @@
 package com.jgc.primeraapplicacion.ui.moviesearch
 
-import com.jgc.primeraapplicacion.data.remote.RetrofitFactory
+import com.jgc.primeraapplicacion.data.remote.RemoteRepository
 import com.jgc.primeraapplicacion.model.Movie
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class MovieSearchPresenter(private val view: MovieSearchView) {
+class MovieSearchPresenter(val view: MovieSearchView, private val remoteRepository: RemoteRepository) {
 
-    fun searchClicked(searchmovie: String) {
-        if (searchmovie.isEmpty()) return
-
-        val movieApi = RetrofitFactory.getMovieApi()
+    fun searchClicked(searchMovie: String) {
+        if (searchMovie.isEmpty()) return
         CoroutineScope(Dispatchers.IO).launch {
-            val response = movieApi.searchMovies("6d247d2725f2627d9e371751ce4e8679", searchmovie)
+            val response =
+                remoteRepository.searchMovies("6d247d2725f2627d9e371751ce4e8679", searchMovie)
             withContext(Dispatchers.Main) {
                 if (response.isSuccessful) {
-                    val responsemovies = response.body()?.results!!
-                    if (listOf(responsemovies).isEmpty()) {
+                    val responseMovies = response.body()?.results!!
+                    if (listOf(responseMovies).isEmpty()) {
                         view.showEmpty()
                         return@withContext
                     }
-                    view.showMovies(responsemovies)
+                    view.showMovies(responseMovies)
                 } else {
                     view.showError()
                 }

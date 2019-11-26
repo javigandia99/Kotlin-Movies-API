@@ -12,8 +12,7 @@ import com.jgc.primeraapplicacion.data.remote.RetrofitFactory
 import com.jgc.primeraapplicacion.model.Movie
 import com.squareup.picasso.Picasso
 
-class MovieSearchAdapter(private val listener: (Movie) -> Unit) :
-    RecyclerView.Adapter<MovieSearchAdapter.ViewHolder>() {
+class MovieSearchAdapter(private val listener: (Movie) -> Unit) : RecyclerView.Adapter<MovieSearchAdapter.ViewHolder>() {
     private var movies = listOf<Movie>()
 
     fun addMovies(newMovie: List<Movie>) {

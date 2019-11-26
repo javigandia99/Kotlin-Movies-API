@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/deletefav_item"
+        android:title="@string/delete_all_item"
+        android:visible="true"/>
+
+
+    <item
+        android:id="@+id/toorder_item"
+        android:title="@string/toorder_item">
+        <menu>
+            <item
+                android:id="@+id/bydate_item"
+                android:title="@string/by_date_added" />
+            <item
+                android:id="@+id/bytitle_item"
+                android:title="@string/by_title" />
+        </menu>
+    </item>
+</menu>

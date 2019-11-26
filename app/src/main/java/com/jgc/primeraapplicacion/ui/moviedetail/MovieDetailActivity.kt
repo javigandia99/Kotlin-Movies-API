@@ -2,9 +2,15 @@ package com.jgc.primeraapplicacion.ui.moviedetail
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.jgc.primeraapplicacion.R
+import com.jgc.primeraapplicacion.data.local.DatabaseFactory
+import com.jgc.primeraapplicacion.data.local.RoomLocalRepository
+import com.jgc.primeraapplicacion.data.remote.RemoteRepository
 import com.jgc.primeraapplicacion.data.remote.RetrofitFactory
+import com.jgc.primeraapplicacion.data.remote.RetrofitRemoteRepository
 import com.jgc.primeraapplicacion.model.DetailCast
 import com.jgc.primeraapplicacion.model.DetailGenres
 import com.jgc.primeraapplicacion.model.MovieDetail
@@ -13,7 +19,8 @@ import kotlinx.android.synthetic.main.activity_movie_detail.*
 
 class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
 
-    private val presenter = MovieDetailPresenter(this)
+    private lateinit var presenter: MovieDetailPresenter
+    private lateinit var favButton: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,10 +28,20 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
         setTitle(R.string.title_moviedetail)
 
         val movieId = intent.extras?.get("id")
-        presenter.takeId(movieId as Int)
+
+        val localRepository = RoomLocalRepository(DatabaseFactory.getDatabase(this).favoritesDao())
+        val remoteRepository: RemoteRepository = RetrofitRemoteRepository(RetrofitFactory.getMovieApi())
+
+        presenter = MovieDetailPresenter(this, localRepository, remoteRepository)
+        presenter.init(movieId as Int)
+
+        favButton = findViewById(R.id.fav_button)
+        favButton.setOnClickListener {
+            presenter.setFavorite(movieId)
+        }
     }
 
-    override fun detail(detail: MovieDetail) {
+    override fun showDetail(detail: MovieDetail) {
         detail_movie_title.text = detail.title
         detail_year.text = detail.release_date
         detail_overview.text = detail.overview
@@ -34,7 +51,7 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
     }
 
     @SuppressLint("SetTextI18n")
-    override fun genres(genre: List<DetailGenres>) {
+    override fun showGenres(genre: List<DetailGenres>) {
         if (genre.isNotEmpty()) {
             val genreCast = genre.joinToString(", ") { it.name }
             detail_genres_name.text = genreCast
@@ -44,7 +61,7 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
     }
 
     @SuppressLint("SetTextI18n")
-    override fun cast(cast: List<DetailCast>) {
+    override fun showCast(cast: List<DetailCast>) {
         if (cast.isNotEmpty()) {
             val forCast = cast.joinToString(", ", limit = 3) { it.name }
             detail_cast.text = forCast
@@ -53,8 +70,25 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailView {
         }
     }
 
-    override fun crew(crew: List<DetailCast>) {
-        val directorCrew = crew.filter { it.job == "Director" }.joinToString(", ") { it.name }
-        detail_director.text = directorCrew
+    @SuppressLint("SetTextI18n")
+    override fun showCrew(crew: List<DetailCast>) {
+        val directorCrew =
+            crew.filter { it.job == "Director" }.joinToString(", ", limit = 2) { it.name }
+       if(crew.isNotEmpty()) {
+           detail_director.text = directorCrew
+       }else{
+           detail_director.text = "No Director"
+       }
     }
+
+    override fun checkFav(response: Int?) {
+        if (response == null) {
+            favButton.setImageResource(android.R.drawable.btn_star_big_on)
+            Toast.makeText(this, "Movie inserted into favorites", Toast.LENGTH_SHORT).show()
+        } else {
+            favButton.setImageResource(android.R.drawable.btn_star_big_off)
+            Toast.makeText(this, "Movie deleted from favorites", Toast.LENGTH_SHORT).show()
+        }
+    }
+
 }

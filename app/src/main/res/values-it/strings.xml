@@ -29,5 +29,17 @@
     <string name="fav_button">Fav Button</string>
     <string name="share_button">Share Button</string>
     <string name="nocast">No castinni</string>
+    <string name="login">Loginni</string>
+    <string name="clear">Clearrinni</string>
+    <string name="username">Username:</string>
+    <string name="password">Password:</string>
+    <string name="password_edit_hint">root</string>
+    <string name="username_edit_hint">1234</string>
+    <string name="logout_item">Logout</string>
+    <string name="delete_all_item">Deletinni All</string>
+    <string name="by_title">By title</string>
+    <string name="by_date_added">By date added</string>
+    <string name="toorder_item">To Order</string>
+    <string name="logo_app_image_login">Logo App Image Login</string>
 
 </resources>

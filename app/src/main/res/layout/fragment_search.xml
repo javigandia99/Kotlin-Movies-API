@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#444141"
+    android:background="@color/colorWallpaper"
     tools:context=".ui.moviesearch.SearchFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -25,7 +25,7 @@
         android:id="@+id/search_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#37FFFFFF"
+        android:background="#8D969090"
         android:baselineAligned="true"
         android:queryHint="Enter a Title of a Movie"
         app:layout_constraintEnd_toEndOf="parent"

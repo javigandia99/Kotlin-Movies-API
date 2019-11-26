@@ -18,8 +18,6 @@
     <string name="title_main">Main</string>
     <string name="title_moviedetail">Movie Detail</string>
     <string name="title_profile">Profile</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="entermovies">Enter Movies</string>
     <string name="popularity">Popularity:</string>
     <string name="adult">Only Adult:</string>
@@ -31,4 +29,16 @@
     <string name="share_button">share_button</string>
     <string name="nogenres">No Genres</string>
     <string name="nocast">No cast</string>
+    <string name="login">Login</string>
+    <string name="clear">Clear</string>
+    <string name="password">Password:</string>
+    <string name="username">Username:</string>
+    <string name="password_edit_hint">1234</string>
+    <string name="username_edit_hint">root</string>
+    <string name="logout_item">Logout</string>
+    <string name="delete_all_item">Delete All</string>
+    <string name="by_title">By title</string>
+    <string name="by_date_added">By date added</string>
+    <string name="toorder_item">To Order</string>
+    <string name="logo_app_image_login">Logo App Image Login</string>
 </resources>

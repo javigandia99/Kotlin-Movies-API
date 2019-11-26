@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,195 +7,175 @@
     android:background="#444141"
     tools:context=".ui.moviedetail.MovieDetailActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ImageView
+        android:id="@+id/detail_movie_imageview"
+        android:layout_width="0dp"
+        android:layout_height="170dp"
+        android:contentDescription="@string/movieImageView"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars[11]" />
+
+    <ScrollView
+        android:id="@+id/scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/fav_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_movie_imageview">
 
-        <ImageView
-            android:id="@+id/detail_movie_imageview"
-            android:layout_width="0dp"
-            android:layout_height="170dp"
-            android:contentDescription="@string/movieImageView"
-            android:scaleType="centerCrop"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars[11]" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/detail_movie_title"
-            style="@style/styleprofile"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="16dp"
-            android:textColor="#7E54CE"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/detail_movie_imageview"
-            app:layout_constraintTop_toBottomOf="@+id/detail_movie_imageview"
-            tools:text="The Lord Of The Rings" />
+            <TextView
+                android:id="@+id/detail_movie_title"
+                style="@style/styleprofile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:textColor="@color/colorAccent"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="The Lord Of The Rings" />
 
-        <TextView
-            android:id="@+id/year_title"
-            style="@style/profile_info_tittle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/releasedate"
-            app:layout_constraintStart_toStartOf="@+id/detail_movie_title"
-            app:layout_constraintTop_toBottomOf="@+id/detail_movie_title" />
+            <TextView
+                android:id="@+id/year_title"
+                style="@style/profile_info_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/releasedate"
+                app:layout_constraintStart_toStartOf="@+id/detail_movie_title"
+                app:layout_constraintTop_toBottomOf="@+id/detail_movie_title" />
 
-        <TextView
-            android:id="@+id/director_title"
-            style="@style/profile_info_tittle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="@string/director"
-            app:layout_constraintStart_toStartOf="@+id/year_title"
-            app:layout_constraintTop_toBottomOf="@+id/year_title" />
+            <TextView
+                android:id="@+id/director_title"
+                style="@style/profile_info_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/director"
+                app:layout_constraintStart_toStartOf="@+id/year_title"
+                app:layout_constraintTop_toBottomOf="@+id/year_title" />
 
-        <TextView
-            android:id="@+id/cast_title"
-            style="@style/profile_info_tittle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="@string/cast"
-            app:layout_constraintStart_toStartOf="@+id/director_title"
-            app:layout_constraintTop_toBottomOf="@+id/director_title" />
+            <TextView
+                android:id="@+id/cast_title"
+                style="@style/profile_info_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/cast"
+                app:layout_constraintStart_toStartOf="@+id/director_title"
+                app:layout_constraintTop_toBottomOf="@+id/director_title" />
 
-        <TextView
-            android:id="@+id/genres_tittle"
-            style="@style/profile_info_tittle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/genres"
-            app:layout_constraintStart_toStartOf="@+id/cast_title"
-            app:layout_constraintTop_toBottomOf="@+id/cast_title" />
+            <TextView
+                android:id="@+id/genres_tittle"
+                style="@style/profile_info_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/genres"
+                app:layout_constraintStart_toStartOf="@+id/cast_title"
+                app:layout_constraintTop_toBottomOf="@+id/cast_title" />
 
-        <TextView
-            android:id="@+id/detail_year"
-            style="@style/styleValueDetail"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:textSize="14sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/year_title"
-            app:layout_constraintEnd_toEndOf="@+id/detail_movie_title"
-            app:layout_constraintStart_toEndOf="@id/barrier"
-            tools:text="1999-12-01" />
+            <TextView
+                android:id="@+id/detail_year"
+                style="@style/styleValueDetail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/year_title"
+                app:layout_constraintEnd_toEndOf="@+id/detail_movie_title"
+                app:layout_constraintStart_toEndOf="@id/barrier"
+                tools:text="1999-12-01" />
 
-        <TextView
-            android:id="@+id/detail_director"
-            style="@style/styleValueDetail"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/director_title"
-            app:layout_constraintEnd_toEndOf="@+id/detail_year"
-            app:layout_constraintStart_toStartOf="@+id/detail_year"
-            tools:text="Quentin Tarantino" />
+            <TextView
+                android:id="@+id/detail_director"
+                style="@style/styleValueDetail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/director_title"
+                app:layout_constraintEnd_toEndOf="@+id/detail_year"
+                app:layout_constraintStart_toStartOf="@+id/detail_year"
+                tools:text="Quentin Tarantino" />
 
-        <TextView
-            android:id="@+id/detail_cast"
-            style="@style/styleValueDetail"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/cast_title"
-            app:layout_constraintEnd_toEndOf="@+id/detail_director"
-            app:layout_constraintStart_toStartOf="@+id/detail_director"
-            tools:text="Johnny Depp" />
+            <TextView
+                android:id="@+id/detail_cast"
+                style="@style/styleValueDetail"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cast_title"
+                app:layout_constraintEnd_toEndOf="@+id/detail_director"
+                app:layout_constraintStart_toStartOf="@+id/detail_director"
+                tools:text="Johnny Depp" />
 
-        <TextView
-            android:id="@+id/detail_genres_name"
-            style="@style/styleValueDetail"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/genres_tittle"
-            app:layout_constraintEnd_toEndOf="@+id/detail_director"
-            app:layout_constraintStart_toStartOf="@+id/detail_year"
-            tools:text="Action" />
+            <TextView
+                android:id="@+id/detail_genres_name"
+                style="@style/styleValueDetail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/genres_tittle"
+                app:layout_constraintEnd_toEndOf="@+id/detail_director"
+                app:layout_constraintStart_toStartOf="@+id/detail_year"
+                tools:text="Action" />
 
-        <androidx.constraintlayout.widget.Barrier
-            android:id="@+id/barrier"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:barrierDirection="end"
-            app:constraint_referenced_ids="year_title,director_title"
-            tools:layout_editor_absoluteX="411dp" />
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="end"
+                app:constraint_referenced_ids="year_title,director_title"
+                tools:layout_editor_absoluteX="411dp" />
 
-        <TextView
-            android:id="@+id/detail_overview"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:textColor="#FFFFFF"
-            app:layout_constraintEnd_toEndOf="@+id/detail_genres_name"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@id/genres_tittle"
-            app:layout_constraintTop_toBottomOf="@+id/detail_genres_name"
-            tools:text='Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latind up one of the more obscure  the Renaissance. Sections 1.10.32 and 1.10.33' />
+            <TextView
+                android:id="@+id/detail_overview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/detail_genres_name"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/genres_tittle"
+                app:layout_constraintTop_toBottomOf="@+id/detail_genres_name"
+                tools:text='Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latind up one of the more obscure  the Renaissance. Sections 1.10.32 and 1.10.33' />
 
-        <ImageView
-            android:id="@+id/add_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
-            android:contentDescription="@string/add_button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/fav_button"
-            app:layout_constraintHorizontal_bias="0.4"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/detail_overview"
-            app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@android:drawable/ic_input_add" />
-
-        <ImageView
-            android:id="@+id/fav_button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/fav_button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/shareButton"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toEndOf="@+id/add_button"
-            app:layout_constraintTop_toTopOf="@+id/add_button"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@android:drawable/btn_star_big_on" />
-
-        <ImageView
-            android:id="@+id/shareButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/share_button"
-            app:layout_constraintBottom_toBottomOf="@+id/fav_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toEndOf="@+id/fav_button"
-            app:layout_constraintTop_toTopOf="@+id/fav_button"
-            app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@android:drawable/ic_delete" />
-
-        <TextView
-            android:id="@+id/detail_score"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:textColor="#F0DA59"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="@+id/detail_movie_title"
-            app:layout_constraintTop_toBottomOf="@+id/detail_movie_title"
-            tools:text="8.0" />
+            <TextView
+                android:id="@+id/detail_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="#F0DA59"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="@+id/detail_movie_title"
+                app:layout_constraintTop_toBottomOf="@+id/detail_movie_title"
+                tools:text="8.0" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/fav_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/fav_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/btn_star_big_off" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
