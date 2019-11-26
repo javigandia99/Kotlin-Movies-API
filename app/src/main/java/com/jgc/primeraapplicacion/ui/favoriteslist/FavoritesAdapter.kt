@@ -34,6 +34,7 @@ class FavoritesAdapter(private val listener: (FavoritesEntity) -> Unit) : Recycl
         return favorites[position]
     }
 }
+
 class FavoritesViewHolder private constructor(val view: View) : RecyclerView.ViewHolder(view) {
     private val title = view.findViewById<TextView>(R.id.item_title)
     private val image = view.findViewById<ImageView>(R.id.item_image)

@@ -51,9 +51,10 @@ class FavoritesPresenter(private val view: FavoritesFragment, private val localR
 
     fun deleteSwiped(favoritesEntity: FavoritesEntity?){
         CoroutineScope(Dispatchers.IO).launch {
-            val deleteFavoriteSwiped = favoritesEntity?.let { localRepository.deleteFavorite(it) }
+            favoritesEntity?.let { localRepository.deleteFavorite(it) }
             withContext(Dispatchers.Main){
                 view.showDeleteFavorite(favoritesEntity)
+                init()
             }
         }
 
